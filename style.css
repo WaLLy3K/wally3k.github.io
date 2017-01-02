@@ -1,0 +1,145 @@
+/* Pi-hole: The primary style for the Website Blocked page */
+/* by WaLLy3K 01FEB15 */
+
+/* Eric Meyer CSS Reset v2.0 | 20110126 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+input, select { margin: 0; padding: 0; border: 0; font: inherit; line-height: 1.2em; }
+
+a { color: rgba(60,140,190,0.95); text-decoration: none; }
+a:hover { color: rgba(115,175,210,0.95); transition-duration: .2s; }
+b { font-weight: bold; }
+i { font-style: italic; }
+html { font-size: 14px; }
+
+body {
+  -webkit-text-size-adjust: 100%;
+  background: #e6e6e6 repeat fixed;
+  background-image: -webkit-linear-gradient(top, rgba(220,220,220,0.6), rgba(240,240,240,0.6)), url('https://raw.githubusercontent.com/pi-hole/AdminLTE/master/img/boxed-bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(220,220,220,0.6), rgba(240,240,240,0.6)), url('https://raw.githubusercontent.com/pi-hole/AdminLTE/master/img/boxed-bg.jpg');
+  font: 1rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #444;
+  text-shadow: 0 1px rgba(0,0,0,0.04);
+}
+
+header h1, header div {
+  display: table-cell;
+  width: 100%;
+  vertical-align: top;
+}
+
+header h1:before, header h1:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 2px;
+    left: 2px;
+    width: 120px;
+    height: 84px;
+    background: url('https://cdn.rawgit.com/WaLLy3K/Pi-hole-Block-Page/master/PHV.svg') no-repeat;
+}
+
+header h1:before {
+    top: -48px;
+    left: -48px;
+    width: 200px;
+    height: 250px;
+    z-index: -1;
+    opacity: 0.06;
+}
+
+header h1 {
+  font: bold 2.2rem 'Trebuchet MS', sans-serif;
+  padding: 8px;
+  text-indent:58px;
+  text-shadow: 0 1px rgba(0,0,0,0.25);
+}
+
+header h1 a, h1 a:hover { color: inherit; }
+
+main {
+  position: relative;
+  display: block;
+  z-index: 1;
+  width: 80%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 6px;
+  line-height: 1.1rem;
+  background-color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.22);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.04);
+  border-radius: 8px;  
+}
+
+footer {
+  margin: 4px auto;
+  width: 86%;
+  font-size: 0.8rem;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 0 1px rgba(0,0,0,0.15);
+}
+
+.phmsg {
+  display: block;
+  margin: 4px 8px 8px 8px;
+  font: bold 1.1rem monospace;
+  white-space: pre-line;
+  overflow: auto;
+  width: 98.5%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.buttons a {
+  box-sizing: border-box;
+  padding: 2px 4px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  border-radius: 4px;
+  color: inherit;
+  font-size: 0.95rem;
+  background: #FAFAFA;
+  background: -webkit-linear-gradient(top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  background: linear-gradient(to bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+}
+
+.buttons {
+  display: table;
+  width: 100%;
+  margin: 4px 0 0 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+ 
+.buttons a {
+  display: table-cell;
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  text-shadow: 0 1px rgba(255,255,255,0.22);
+}
+
+a.safe { background-color: rgba(0,220,0,0.4); }
+a.warn { background-color: rgba(220,0,0,0.4); }
+
+.more {
+  font-family: monospace;
+  font-size: 0.8em;
+  margin: 2px 0 0 8px;
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  width: 98.5%;
+}
+
+/* iPhone: Portrait */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+  main { width: 100%; border-radius: 0; margin: 0 0 4px 0; border-width: 1px 0; }
+  header { background-color: rgba(255,255,255,0.3); }
+  header h1:before { height: 0; }
+  header h1:after { height: 42px; }
+  header h1 { text-indent:28px;  font-size: 1.7rem; }
+}
