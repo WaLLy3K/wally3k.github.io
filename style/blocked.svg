@@ -1,0 +1,9 @@
+<svg width="110" height="18">
+  <defs><style>
+    .c1 {fill: #942525; fill-rule: evenodd;}
+    .c2 {fill: rgba(0,0,0,0.3); font-size: 11px; font-family: Arial;}
+  </style></defs>
+  <path class="c1" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0ZM8,2A6,6,0,1,1,2,8,6,6,0,0,1,8,2Z"/>
+  <path class="c1" d="M2,12.625L11.625,3,13,4.375,3.375,14Z"/>
+  <text x="18" y="12" class="c2">Blocked by Pi-hole</text>
+</svg>
