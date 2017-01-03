@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="110" height="18">
   <defs><style>
-    .c1 {fill: #942525; fill-rule: evenodd;}
+    .c1 {fill: rgba(148,37,37,0.5); fill-rule: evenodd;}
     .c2 {fill: rgba(0,0,0,0.3); font-size: 11px; font-family: Arial;}
   </style></defs>
   <path class="c1" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0ZM8,2A6,6,0,1,1,2,8,6,6,0,0,1,8,2Z"/>
