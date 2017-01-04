@@ -1,15 +1,27 @@
 /* Pi-hole: The primary style for the Website Blocked page */
 /* by WaLLy3K 01FEB15 */
+/* Developed on: Chrome v55 Win & macOS, IE11 Win, Safari 10 macOS, Safari iOS 9.3.3 */
 
 /* Eric Meyer CSS Reset v2.0 | 20110126 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
-input, select { margin: 0; padding: 0; border: 0; font: inherit; line-height: 1.2em; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+input:disabled { opacity: 1; }
+table { border-collapse: collapse; border-spacing: 0; }
+body { line-height: 1; }
 
-a { color: rgba(60,140,190,0.95); text-decoration: none; }
-a:hover { color: rgba(115,175,210,0.95); transition-duration: .2s; }
+a { color: rgba(65,120,190,0.95); text-decoration: none; }
+a:hover { color: rgba(215,145,55,0.95); transition-duration: .2s; }
 b { font-weight: bold; }
 i { font-style: italic; }
-html { font-size: 14px; }
+input:disabled { background-color: #f0f0f0; cursor: auto !important; }
+html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+body { color: rgba(68,68,68,1); }
+input:disabled { color: rgba(68,68,68,0.5); }
+:-ms-input-placeholder { color: rgba(68,68,68,0.43) !important; }
 
 body {
   -webkit-text-size-adjust: 100%;
@@ -17,8 +29,7 @@ body {
   background-image: -webkit-linear-gradient(top, rgba(220,220,220,0.6), rgba(240,240,240,0.6)), url('https://raw.githubusercontent.com/pi-hole/AdminLTE/master/img/boxed-bg.jpg');
   background-image: linear-gradient(to bottom, rgba(220,220,220,0.6), rgba(240,240,240,0.6)), url('https://raw.githubusercontent.com/pi-hole/AdminLTE/master/img/boxed-bg.jpg');
   font: 1rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #444;
-  text-shadow: 0 1px rgba(0,0,0,0.04);
+  color: rgb(68,68,68);
 }
 
 header h1, header div {
@@ -28,23 +39,23 @@ header h1, header div {
 }
 
 header h1:before, header h1:after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    top: 2px;
-    left: 2px;
-    width: 120px;
-    height: 84px;
-    background: url('phv.svg') no-repeat;
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 2px;
+  left: 2px;
+  width: 80px;
+  height: 80px;
+  background: url('https://wally3k.github.io/style/phv.svg') no-repeat;
 }
 
 header h1:before {
-    top: -48px;
-    left: -48px;
-    width: 200px;
-    height: 250px;
-    z-index: -1;
-    opacity: 0.06;
+  z-index: -1;
+  top: -48px;
+  left: -48px;
+  width: 250px;
+  height: 250px;
+  opacity: 0.1;
 }
 
 header h1 {
@@ -71,69 +82,121 @@ main {
   border-radius: 8px;  
 }
 
-footer {
-  margin: 4px auto;
-  width: 86%;
-  font-size: 0.8rem;
-  font-family: monospace;
-  text-align: center;
-  text-shadow: 0 1px rgba(0,0,0,0.15);
-}
+main div { margin: 8px 0; }
+main div:first-child { margin-top: 0; }
+main div:last-child { margin-bottom: 0; }
 
-.phmsg {
+.msg {
   display: block;
-  margin: 4px 8px 8px 8px;
-  font: bold 1.1rem monospace;
+  margin-top: 4px;
+  text-indent: 8px;
+  font: bold 1.1rem Consolas, monospace;
   white-space: pre-line;
   overflow: auto;
-  width: 98.5%;
   -webkit-overflow-scrolling: touch;
-}
-
-.buttons a {
-  box-sizing: border-box;
-  padding: 2px 4px;
-  border: 1px solid rgba(0,0,0,0.15);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-  border-radius: 4px;
-  color: inherit;
-  font-size: 0.95rem;
-  background: #FAFAFA;
-  background: -webkit-linear-gradient(top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
-  background: linear-gradient(to bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
 }
 
 .buttons {
   display: table;
   width: 100%;
-  margin: 4px 0 0 0;
+  margin: 0 0 0 0;
   font-size: 1.15rem;
   font-weight: bold;
   white-space: nowrap;
+  border-spacing: 4px 0;
 }
  
-.buttons a {
+.buttons * {
   display: table-cell;
-  width: 100%;
   padding: 4px 8px;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
   font-size: 1rem;
   line-height: 1rem;
   text-align: center;
   text-shadow: 0 1px rgba(255,255,255,0.22);
+  background: #F8F8F8;
+  background: -webkit-linear-gradient(top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  background: linear-gradient(to bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  margin-right: 4px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
+.buttons *:hover {
+  color: inherit; 
+  background: -webkit-linear-gradient(top, rgba(195,195,195,0.25), rgba(175,175,175,0.25));
+  background: linear-gradient(to bottom, rgba(195,195,195,0.25), rgba(175,175,175,0.25));
+}
+.buttons *:last-child { margin-right: 0; }
 
-a.safe { background-color: rgba(0,220,0,0.4); }
-a.warn { background-color: rgba(220,0,0,0.4); }
+#back    { background-color: rgba(0,220,0,0.4); }
+#info     { background-color: rgba(60,140,220,0.4); width: 84px; }
+#whitelist { background-color: rgba(220,0,0,0.4); }
 
-.more {
-  font-family: monospace;
+@keyframes fade { from {opacity: 0;} to {opacity: 1;} }
+#querylist[style*="display: block"] { animation: fade .2s linear; }
+
+#querylist #output {
+  font-family: Consolas, monospace;
+  white-space: pre;
   font-size: 0.8em;
-  margin: 2px 0 0 8px;
+  margin: 2px 0 4px 8px;
   overflow: auto;
-  white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  width: 98.5%;
+  width: 98%;
+  tab-size: 2;
 }
+
+#domain { display: none; }
+
+#pw {
+  width: auto;
+  cursor: text;
+  font-weight: normal;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: -webkit-linear-gradient(bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  background: linear-gradient(to top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+}
+
+#whitelist { width: auto; }
+
+#notification {
+  text-align: center;
+  padding: 4px;
+  margin-top: 8px;
+  border: 1px dashed #CBCBCB;
+  background: #F1DD71;
+  border-radius: 6px;
+  word-wrap: break-word;
+}
+
+footer {
+  margin: 4px auto;
+  width: 86%;
+  font: 0.8rem Consolas, monospace;
+  text-align: center;
+}
+
+/* IE 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .buttons * { margin-right: 0; } /* Correctly acknowledges border-radius */
+  #output a { margin-left: -12px; } /* tab-size correction */
+  form.buttons { width: auto; }
+  .buttons button { vertical-align: middle; }
+}
+
+/* Safari: macOS & iOS */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { @media {
+  .buttons input { padding: 2px 4px; line-height: 1.3rem; }
+}}
 
 /* iPhone: Portrait */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
