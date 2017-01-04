@@ -197,7 +197,7 @@ footer {
 
 /* Safari: macOS & iOS */
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { @media {
-  .buttons input { padding: 2px 4px; line-height: 1.3rem; }
+  .buttons input { padding: 2px 4px !important; line-height: 1.3rem; }
 }}
 
 /* iPhone: Portrait */
