@@ -123,11 +123,6 @@ main div:last-child { margin-bottom: 0; }
   border-radius: 4px;
   margin-right: 4px;
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 .buttons *:hover {
   color: inherit; 
@@ -136,6 +131,14 @@ main div:last-child { margin-bottom: 0; }
 }
 .buttons *:last-child { margin-right: 0; }
 
+.buttons a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 #back    { background-color: rgba(0,220,0,0.4); }
 #info     { background-color: rgba(60,140,220,0.4); width: 84px; }
 #whitelist { background-color: rgba(220,0,0,0.4); }
@@ -143,7 +146,7 @@ main div:last-child { margin-bottom: 0; }
 @keyframes fade { from {opacity: 0;} to {opacity: 1;} }
 #querylist[style*="display: block"] { animation: fade .2s linear; }
 
-.query { display: none; }
+.query, #querylist { display: none; }
 
 #querylist #output {
   font-family: Consolas, monospace;
@@ -189,11 +192,11 @@ footer {
 
 /* IE 10+ */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .buttons * { margin-right: 0; } /* Correctly acknowledges border-radius */
+  .buttons * { margin-right: 0; vertical-align: middle; } /* Correctly acknowledges border-radius */
   #output a { margin-left: -12px; } /* tab-size correction */
   form.buttons { width: auto; }
-  .buttons button { vertical-align: middle; }
 }
+
 
 /* Safari: macOS & iOS */
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { @media {
