@@ -53,8 +53,8 @@ header h1:before {
   z-index: -1;
   top: -48px;
   left: -48px;
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   opacity: 0.1;
 }
 
