@@ -6,35 +6,42 @@
   <link rel="shortcut icon" href="https://firebog.net/stornur/favicon.ico" type="image/x-icon"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="robots" content="noindex,nofollow"/>
-  <style>ul { white-space: nowrap; overflow: auto; -webkit-overflow-scrolling: touch; padding: 1px 0; } </style>
 </head><body>
 <header>
   <h1><a href="/">Blacklist Domains</a></h1>
+  <style>.url-list { white-space: nowrap; overflow: auto; -webkit-overflow-scrolling: touch; }</style>
 </header>
 <main>
 <h2>Welcome!</h2>
-<div>Here's a list of all the blocklists I'm familiar with, compatible with <a href="https://pi-hole.net">Pi-hole</a>. You may note that some of these lists are mirrored by myself, due to not originally being in a compatible format. If this concerns you, feel free not to use them.<br/>
+<div>Here's a list of all the blocklists I recommend, compatible with the network-wide adblocking tool known as <a href="https://pi-hole.net">Pi-hole</a>.<br/>
 <br/>
-It's also worth noting that if you are wanting a (relatively) hands-off adblocking experience, you will want to consider not installing any 'suspicious-level' domains.
-Finally, I recommend installing these lists to a file called <code>/etc/pihole/adlists.list</code>, which will need to be created if it does not already exist.<br/>
-<br/>
-The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.<br/>
-<br/>
-<b style="color: red;">Finally, a word of warning:</b> Installing all these lists will <i>currently</i> result in the Query Log function of Pi-hole running out of memory, and returning a <code>datatables</code> error. Either skip a big list (such as <code>hosts.eladkarako.com</code>) or increase <code>memory_limit = 256M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>).
+There are some things worth noting:
+<ul>
+  <li>Some of these lists are mirrored by myself, due to the source not being a 'domains only' list. If this concerns you, please don't use them</li>
+  <li>If you want a (relatively) hands-off adblocking experience, consider not installing any 'suspicious' lists</li>
+  <li>These lists are installed to <code>/etc/pihole/adlists.list</code>, which needs to be created if it doesn't already exist</li>
+  <li>The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.</li>
+</ul>
+<b style="color: red;">A word of warning:</b>
+<ul>
+  <li>Installing all of these lists will result in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads</li>
+  <li>If you want to continue, consider skipping a list known for false positives (i.e: <code>hosts.eladkarako.com</code>)</li>
+  <li>Alternatively, increase PHP's memory: <code>memory_limit = 256M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>)</li>
+</ul>
 </div>
 
 <h2>Suspicious Lists:</h2>
-<ul>
-  <li><a href="http://www.sa-blacklist.stearns.org/sa-blacklist">Bill Stearns Blacklist</a>: http://v.firebog.net/hosts/BillStearns.txt
-  <li><a href="http://sysctl.org/cameleon">CAMELEON Hosts</a>: http://sysctl.org/cameleon/hosts</li>
+<ul class="url-list">
+  <li><a href="http://www.sa-blacklist.stearns.org/sa-blacklist">Bill Stearn</a>: http://v.firebog.net/hosts/BillStearns.txt
+  <li><a href="http://sysctl.org/cameleon">CAMELEON</a>: http://sysctl.org/cameleon/hosts</li>
   <li><a href="https://dshield.org">DSHEILD Suspicious</a>: https://www.dshield.org/feeds/suspiciousdomains_Low.txt</li>
-  <li><a href="http://hosts.eladkarako.com">Elad Karakos Hosts</a>: https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt</li>
-  <li><a href="http://www.joewein.de/sw/bl-text.htm">Joe Weins Blacklist</a>: http://www.joewein.net/dl/bl/dom-bl-base.txt</li>
+  <li><a href="http://hosts.eladkarako.com">Elad Karako</a>: https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt</li>
+  <li><a href="http://www.joewein.de/sw/bl-text.htm">Joe Wein</a>: http://www.joewein.net/dl/bl/dom-bl-base.txt</li>
   <li><a href="https://mahakala.is">Mahakala</a>: https://adblock.mahakala.is</li>
   <li><a href="https://hosts-file.net">hpHosts Spam</a>: https://hosts-file.net/grm.txt</li>
-  <li><a href="http://hostsfile.mine.nu">Andy Shorts Hostsfile</a>: http://hostsfile.mine.nu/hosts0.txt</li>
-  <li><a href="https://github.com/piwik/referrer-spam-blacklist">Referrer Spam Blacklist by Piwik</a>: https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt</li>
-  <li><a href="https://github.com/ReddestDream/reddestdream.github.io/tree/master/Projects/MinimalHosts/etc/MinimalHostsBlocker">ReddestDreams Repo</a>: https://raw.githubusercontent.com/ReddestDream/reddestdream.github.io/master/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts</li>
+  <li><a href="http://hostsfile.mine.nu">Andy Short</a>: http://hostsfile.mine.nu/hosts0.txt</li>
+  <li><a href="https://github.com/piwik/referrer-spam-blacklist">Piwik Referrer Spam</a>: https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt</li>
+  <li><a href="https://github.com/ReddestDream/reddestdream.github.io/tree/master/Projects/MinimalHosts/etc/MinimalHostsBlocker">ReddestDream</a>: https://raw.githubusercontent.com/ReddestDream/reddestdream.github.io/master/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks KAD</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spammers</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts</li>
   <li><a href="http://www.securemecca.com">SecureMecca</a>: http://v.firebog.net/hosts/Securemecca.txt</li>
@@ -45,7 +52,7 @@ The formatting for <code>adlists.list</code> is the same as <code>adlists.defaul
 </ul>
 
 <h2>Advertising Lists:</h2>
-<ul>
+<ul class="url-list">
   <li><a href="https://adaway.org">AdAway</a>: https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt</li>
   <li><a href="https://disconnect.me">Disconnect Ads</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</li>
   <li><a href="https://github.com/easylist/easylist/">Easylist</a>: http://v.firebog.net/hosts/Easylist.txt</li>
@@ -55,7 +62,7 @@ The formatting for <code>adlists.list</code> is the same as <code>adlists.defaul
 </ul>
 
 <h2>Tracking &amp; Telemetry Lists:</h2>
-<ul>
+<ul class="url-list">
   <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers</a>: http://v.firebog.net/hosts/Airelle-trc.txt</li>
   <li><a href="https://github.com/easylist/easylist/">Easyprivacy</a>: http://v.firebog.net/hosts/Easyprivacy.txt</li>
   <li><a href="https://github.com/quidsup/notrack">Quidsup Trackers</a>: https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</li>
@@ -66,7 +73,7 @@ The formatting for <code>adlists.list</code> is the same as <code>adlists.defaul
 </ul>
 
 <h2>Malicious Lists:</h2>
-<ul>
+<ul class="url-list">
   <li><a href="https://bitbucket.org/ethanr/dns-blacklists">Mandiant APT1 Report</a>: https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt</li>
   <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk</a>: http://v.firebog.net/hosts/Airelle-hrsk.txt</li>
   <li><a href="https://disconnect.me">Disconnect Malvertising</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt</li>
@@ -80,48 +87,52 @@ The formatting for <code>adlists.list</code> is the same as <code>adlists.defaul
   <li><a href="https://github.com/quidsup/notrack">Quidsup Malicious</a>: https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt</li>
   <li><a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker</a>: https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Risky Hosts</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</li>
-  <li><a href="http://www.shallalist.de">Shalla Malicious List</a>: http://v.firebog.net/hosts/Shalla-mal.txt</li>
+  <li><a href="http://www.shallalist.de">Shalla Malicious</a>: http://v.firebog.net/hosts/Shalla-mal.txt</li>
   <li><a href="https://zeustracker.abuse.ch">Zeus Tracker</a>: https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</li>
 </ul>
 
 <h2>Whitelist Suggestions:</h2>
-<div>The following is a list of useful sites that have been found to be blocked at some point:
+<div>The following is a list of useful sites that have been found to be blocked at some point:<br/>
+<br/>
+Google Content:
 <ul>
-  <li>Google Content:</li>
-    <ul>
-      <li><a href="http://google.com">google.com</a>: The entire site (Elad Karakos Hosts)</li>
-      <li><a href="http://webcache.googleusercontent.com">webcache.googleusercontent.com</a>: Google Cache (Elad Karakos Hosts)</li>
-      <li><a href="http://chrome.google.com">chrome.google.com</a>: Required for Chrome extensions</li>
-      <li><a href="http://clients2.google.com">clients2.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
-      <li><a href="http://clients3.google.com">clients3.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
-      <li><a href="http://clients4.google.com">clients4.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
-      <li><a href="http://clients5.google.com">clients5.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
-     </ul>
-  <li>Dropbox Content:</li>
-    <ul>
-      <li><a href="http://dropbox.com">dropbox.com</a>: The entire site</li>
-      <li><a href="http://dl.dropbox.com">dl.dropbox.com</a>: Required to download content from Dropbox (Joey Lanes Hosts)</li>
-      <li><a href="http://dl.dropboxusercontent.com">dl.dropboxusercontent.com</a>: Required to download content from Dropbox</li>
-    </ul>
-  <li><a href="http://gitter.im">gitter.im</a>: Github chat (Elad Karakos Hosts)</li>
-  <li><a href="http://msftncsi.com">msftncsi.com</a>: Windows connectivity tester (Elad Karakos Hosts, Mahakala)</li>
-  <li><a href="http://www.msftncsi.com">www.msftncsi.com</a>: Windows connectivity tester (Elad Karakos Hosts, Mahakala)</li>
-  <li><a href="http://ea.com">ea.com</a>: EA Games (Mahakala, Andy Shorts Hosts)</li>
-  <li><a href="http://proxy.novafusion.ea.com">proxy.novafusion.ea.com</a>: Activation server for Origin by EA Games</li>
-  <li><a href="http://ax.phobos.apple.com.edgesuite.net">ax.phobos.apple.com.edgesuite.net</a>: Apple App Store content (Elad Karakos Hosts)</li>
-  <li><a href="http://www.kickstarter.com">www.kickstarter.com</a>: Crowdsourced funding (Elad Karakos Hosts)</li>
-  <li><a href="http://static.kickstarter.com">static.kickstarter.com</a>: Site content (Elad Karakos Hosts)</li>
-  <li><a href="http://netflix.com">netflix.com</a>: Video streaming (Andy Shorts Hosts)</li>
-  <li><a href="http://gravatar.com">gravatar.com</a>: Online avatars/display pictures (Mahakala)</li>
-  <li><a href="http://tomshardware.com">tomshardware.com</a>: Hardware reviews (Andy Shorts Hosts)</li>
-  <li><a href="http://alluremedia.com.au">alluremedia.com.au</a>: Content for Kotaku and sister sites (Mahakala)</li>
-  <li><a href="http://cdn.embedly.com">cdn.embedly.com</a>: Reddit embedded images (Elad Karakos Hosts)</li>
-  <li><a href="http://www.theguardian.com">www.theguardian.com</a>: News source (Elad Karakos Hosts)</li>
-  <li><a href="http://surveymonkey.com">surveymonkey.com</a>: Surveys (Elad Karakos Hosts)</li>
-  <li><a href="http://secure.surveymonkey.com">secure.surveymonkey.com</a>: SurveyMonkey Site content (Elad Karakos Hosts)</li>
+  <li><a href="http://google.com">google.com</a>: The entire site (Elad Karako)</li>
+  <li><a href="http://webcache.googleusercontent.com">webcache.googleusercontent.com</a>: Google Cache (Elad Karako)</li>
+  <li><a href="http://chrome.google.com">chrome.google.com</a>: Required for Chrome extensions</li>
+  <li><a href="http://clients2.google.com">clients2.google.com</a>: Google apps connectivity (Andy Short)</li>
+  <li><a href="http://clients3.google.com">clients3.google.com</a>: Google apps connectivity (Andy Short)</li>
+  <li><a href="http://clients4.google.com">clients4.google.com</a>: Google apps connectivity (Andy Short)</li>
+  <li><a href="http://clients5.google.com">clients5.google.com</a>: Google apps connectivity (Andy Short)</li>
 </ul>
-Got any suggestions? Hit me up on <a href="https://twitter.com/WaLLy3K">Twitter</a>, <a href="https://www.reddit.com/user/WaLLy3K/">Reddit</a> or <a href="https://github.com/WaLLy3K/wally3k.github.io/issues">Github</a>.
+
+Dropbox Content:
+<ul>
+  <li><a href="http://dropbox.com">dropbox.com</a>: The entire site</li>
+  <li><a href="http://dl.dropbox.com">dl.dropbox.com</a>: Required to download content from Dropbox (Joey Lane)</li>
+  <li><a href="http://dl.dropboxusercontent.com">dl.dropboxusercontent.com</a>: Required to download content from Dropbox</li>
+</ul>
+
+Everything Else:
+<ul>
+  <li><a href="http://msftncsi.com">msftncsi.com</a>: Windows connectivity tester (Elad Karako, Mahakala)</li>
+  <li><a href="http://www.msftncsi.com">www.msftncsi.com</a>: Windows connectivity tester (Elad Karako, Mahakala)</li>
+  <li><a href="http://dns.msftncsi.com">dns.msftncsi.com</a>: Windows DNS server (Elad Karako)</li>
+  <li><a href="http://netflix.com">netflix.com</a>: Video streaming (Andy Short)</li>
+  <li><a href="http://cdn.embedly.com">cdn.embedly.com</a>: Reddit embedded images (Elad Karako)</li>
+  <li><a href="http://ax.phobos.apple.com.edgesuite.net">ax.phobos.apple.com.edgesuite.net</a>: Apple App Store content (Elad Karako)</li>
+  <li><a href="http://www.kickstarter.com">www.kickstarter.com</a>: Crowdsourced funding (Elad Karako)</li>
+  <li><a href="http://static.kickstarter.com">static.kickstarter.com</a>: Site content (Elad Karako)</li>
+  <li><a href="http://gitter.im">gitter.im</a>: Github chat (Elad Karako)</li>
+  <li><a href="http://ea.com">ea.com</a>: EA Games (Mahakala, Andy Short)</li>
+  <li><a href="http://proxy.novafusion.ea.com">proxy.novafusion.ea.com</a>: Activation server for Origin by EA Games</li>
+  <li><a href="http://gravatar.com">gravatar.com</a>: Online avatars/display pictures (Mahakala)</li>
+  <li><a href="http://tomshardware.com">tomshardware.com</a>: Hardware reviews (Andy Short)</li>
+  <li><a href="http://alluremedia.com.au">alluremedia.com.au</a>: Content for Kotaku and sister sites (Mahakala)</li>
+  <li><a href="http://www.theguardian.com">www.theguardian.com</a>: News source (Elad Karako)</li>
+  <li><a href="http://surveymonkey.com">surveymonkey.com</a>: Surveys (Elad Karako)</li>
+  <li><a href="http://secure.surveymonkey.com">secure.surveymonkey.com</a>: SurveyMonkey Site content (Elad Karako)</li>
+</ul>
 </div>
 </main>
-<footer>This site and its content &copy; <a href="https://twitter.com/WaLLy3K">WaLLy3K</a></footer>
+<footer>Direct all suggestions and complaints to <a href="https://twitter.com/WaLLy3K">@WaLLy3K</a> (or to <a href="https://www.reddit.com/user/WaLLy3K/">Reddit</a> or <a href="https://github.com/WaLLy3K/wally3k.github.io/issues">Github</a>).</footer>
 </body></html>
