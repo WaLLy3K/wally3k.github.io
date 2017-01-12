@@ -18,7 +18,10 @@
 It's also worth noting that if you are wanting a (relatively) hands-off adblocking experience, you will want to consider not installing any 'suspicious-level' domains.
 Finally, I recommend installing these lists to a file called <code>/etc/pihole/adlists.list</code>, which will need to be created if it does not already exist.<br/>
 <br/>
-The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.</div>
+The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.<br/>
+<br/>
+<b style="color: red;">Finally, a word of warning:</b> Installing all these lists will <i>currently</i> result in the Query Log function of Pi-hole running out of memory, and returning a <code>datatables</code> error. Either skip a big list (such as <code>hosts.eladkarako.com</code>) or increase <code>memory_limit = 256M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>).
+</div>
 
 <h2>Suspicious Lists:</h2>
 <ul>
