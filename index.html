@@ -16,7 +16,7 @@
 <div>Here's a list of all the blocklists I'm familiar with, compatible with <a href="https://pi-hole.net">Pi-hole</a>. You may note that some of these lists are mirrored by myself, due to not originally being in a compatible format. If this concerns you, feel free not to use them.<br/>
 <br/>
 It's also worth noting that if you are wanting a (relatively) hands-off adblocking experience, you will want to consider not installing any 'suspicious-level' domains.
-Finally, I recommend installing these lists to a file called <code>/etc/pihole/adlists.list</code>, which will need to be created if it does not already exist.<br/>
+I recommend installing these lists to a file called <code>/etc/pihole/adlists.list</code>, which will need to be created if it does not already exist.<br/>
 <br/>
 The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.</div>
 
@@ -82,25 +82,34 @@ The formatting for <code>adlists.list</code> is the same as <code>adlists.defaul
 </ul>
 
 <h2>Whitelist Suggestions:</h2>
+<div>The following is a list of useful sites that have been found to be blocked at some point:
 <ul>
-  <li>dropbox.com: Required to access main site</li>
-  <li>dl.dropbox.com: Required to download content from Dropbox</li>
-  <li>dl.dropboxusercontent.com: Required to download content from Dropbox</li>
-  <li>gitter.im: Github chat</li>
-  <li>msftncsi.com: Windows connectivity tester</li>
-  <li>www.msftncsi.com: Windows connectivity tester</li>
-  <li>proxy.novafusion.ea.com: Activation server for Origin by EA Games</li>
-  <li>google.com: Required to access main site</li>
-  <li>chrome.google.com: Required for Chrome extensions</li>
-  <li>clients2.google.com: Google apps connectivity</li>
-  <li>clients3.google.com: Google apps connectivity</li>
-  <li>clients4.google.com: Google apps connectivity</li>
-  <li>clients5.google.com: Google apps connectivity</li>
-  <li>webcache.googleusercontent.com: Google Cache</li>
-  <li>ax.phobos.apple.com.edgesuite.net: Apple App Store content</li>
-  <li>www.kickstarter.com: Required to access main site</li>
-  <li>static.kickstarter.com: Kickstarter content</li>
+  <li>Google Content:</li>
+    <ul>
+      <li><a href="http://google.com">google.com</a>: The entire site (Elad Karakos Hosts)</li>
+      <li><a href="http://webcache.googleusercontent.com">webcache.googleusercontent.com</a>: Google Cache (Elad Karakos Hosts)</li>
+      <li><a href="http://chrome.google.com">chrome.google.com</a>: Required for Chrome extensions</li>
+      <li><a href="http://clients2.google.com">clients2.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
+      <li><a href="http://clients3.google.com">clients3.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
+      <li><a href="http://clients4.google.com">clients4.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
+      <li><a href="http://clients5.google.com">clients5.google.com</a>: Google apps connectivity (Andy Shorts Hosts)</li>
+     </ul>
+  <li>Dropbox Content:</li>
+    <ul>
+      <li><a href="http://dropbox.com">dropbox.com</a>: The entire site</li>
+      <li><a href="http://dl.dropbox.com">dl.dropbox.com</a>: Required to download content from Dropbox (Joey Lanes Hosts)</li>
+      <li><a href="http://dl.dropboxusercontent.com">dl.dropboxusercontent.com</a>: Required to download content from Dropbox</li>
+    </ul>
+  <li><a href="http://gitter.im">gitter.im</a>: Github chat (Elad Karakos Hosts)</li>
+  <li><a href="http://msftncsi.com">msftncsi.com</a>: Windows connectivity tester (Elad Karakos Hosts, Mahakala)</li>
+  <li><a href="http://www.msftncsi.com">www.msftncsi.com</a>: Windows connectivity tester (Elad Karakos Hosts, Mahakala)</li>
+  <li><a href="http://proxy.novafusion.ea.com">proxy.novafusion.ea.com</a>: Activation server for Origin by EA Games</li>
+  <li><a href="http://ax.phobos.apple.com.edgesuite.net">ax.phobos.apple.com.edgesuite.net</a>: Apple App Store content (Elad Karakos Hosts)</li>
+  <li><a href="http://www.kickstarter.com">www.kickstarter.com</a>: Required to access main site (Elad Karakos Hosts)</li>
+  <li><a href="http://static.kickstarter.com">static.kickstarter.com</a>: Kickstarter content (Elad Karakos Hosts)</li>
 </ul>
+Got any suggestions? Hit me up on <a href="https://twitter.com/WaLLy3K">Twitter</a>, <a href="https://www.reddit.com/user/WaLLy3K/">Reddit</a> or <a href="https://github.com/WaLLy3K/wally3k.github.io/issues">Github</a>.
+</div>
 </main>
 <footer>This site and its content &copy; <a href="https://twitter.com/WaLLy3K">WaLLy3K</a></footer>
 </body></html>
