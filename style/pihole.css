@@ -159,6 +159,8 @@ main div:last-child { margin-bottom: 0; }
   tab-size: 2;
 }
 
+#output span { display: inline-block; width: 38px; }
+
 #domain { display: none; }
 
 #pw {
