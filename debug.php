@@ -1,7 +1,15 @@
 <?php
 // Pi-hole Block Page: Show "Website Blocked" on blacklisted domains
 // by WaLLy3K 06SEP16 for Pi-hole
-$phbpVersion = "2.1.11";
+$phbpVersion = "2.1.1";
+
+// Debug PHBP
+$debug = (isset($_GET["debug"]) ? "TRUE" : "FALSE");
+if ($debug == "TRUE") {
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
 
 // Retrieve local custom configuration
 $phbpConfig = (is_file("/var/phbp.ini") ? "TRUE" : "FALSE");
@@ -94,7 +102,7 @@ if ($phbpConfig == "TRUE") {
 }
 
 // Sanitise URL input
-$serverName = filter_var($_SERVER['SERVER_NAME'], FILTER_SANITIZE_SPECIAL_CHARS);
+$serverName = filter_var($_SERVER["SERVER_NAME"], FILTER_SANITIZE_SPECIAL_CHARS);
 
 // Email address config option
 if ($adminEmail !== "FALSE") {
@@ -117,7 +125,7 @@ if ($serverName == "pi.hole") {
   // When browsing to RPi, redirect to custom landing page
   include $landPage;
   exit();
-}elseif (in_array($uriExt, $webRender) || isset($_GET['debug'])) {
+}elseif (in_array($uriExt, $webRender) || $debug == "TRUE") {
   // Valid URL extension to render as "Website Blocked"
 }elseif (substr_count($_SERVER['REQUEST_URI'], "?") && isset($_SERVER['HTTP_REFERER']) && $blankGif == "TRUE") {
   // Serve a 1x1 blank gif to POTENTIAL iframe with query string
@@ -144,6 +152,7 @@ function checkUpdate() {
 // This may not work if admin updates gravity, and later inserts a new hosts URL at anywhere but the end
 $urlList = array_values(preg_grep("/(^http)|(^www)/i", file($adlist, FILE_IGNORE_NEW_LINES)));
 $urlListCount = count($urlList);
+if ($debug == "TRUE") echo "<pre>[\$urlListCount] Total number of installed blocklists: $urlListCount\n";
 
 // Strip any combo of HTTP, HTTPS and WWW
 $urlList_match = preg_replace("/https?\:\/\/(www.)?/i", "", $urlList);
@@ -151,38 +160,30 @@ $urlList_match = preg_replace("/https?\:\/\/(www.)?/i", "", $urlList);
 // Exact search, returning a numerically sorted array of matching .domains
 // Returns "list" if manually blacklisted
 $listMatches = preg_grep("/(\.domains|blacklist\.txt).*\([1-9]/", file("http://pi.hole/admin/scripts/pi-hole/php/queryads.php?domain=$serverName&exact"));
-
-if (isset($_GET["debug"])) {
-	echo "<pre>Initial output:\n";
-	print_r($listMatches);
-	echo "\n";
-}
-
+if ($debug == "TRUE") echo "[\$listMatches] Ad Query returned ".count($listMatches)." results\n";
 $listMatches = preg_replace("/(data: ::: \/etc\/pihole\/.....)|(\.(.*)\s)/i", "", $listMatches);
-
-if (isset($_GET["debug"])) {
-	echo "Cleaned output:\n";
-	print_r($listMatches);
-	echo "\n";
-}
-
 sort($listMatches, SORT_NUMERIC);
+if ($debug == "TRUE") echo "[\$listMatches] Sorted Ad Query Numbers: ".implode(', ', $listMatches)."\n";
 
 // Return how many lists serverName is featured in
 if ($listMatches[0] == "list") {
+  if ($debug == "TRUE") { echo "Site appears to be manually blacklisted\n"; }
   $featuredTotal = "-1";
 }else{
   $featuredTotal = count($listMatches);
-  if(empty($featuredTotal)) $featuredTotal = 0;
+  if(empty($featuredTotal)) {
+		if ($debug == "TRUE") { echo "Featured total list was empty\n"; }
+  	$featuredTotal = 0;
+	}
 }
 
 // Error correction (EG: If gravity has been updated and adlists.list has been removed)
-if ($featuredTotal > $urlListCount) $featuredTotal = "0";
-
-if (isset($_GET["debug"])) {
-	echo "Featured Total: $featuredTotal";
-	die();
+if ($featuredTotal > $urlListCount) {
+	if ($debug == "TRUE") { echo "Featured total list was larger than urlListCount\n"; }
+	//$featuredTotal = "0";
 }
+
+if ($debug == "TRUE") { echo "[\$featuredTotal] Featured Total: $featuredTotal\n"; }
 
 if ($featuredTotal == "-1") {
     $notableFlag = "Blacklisted manually";
@@ -212,6 +213,8 @@ if ($featuredTotal == "-1") {
   // Do not show primary flag if we are unable to find one
   $notableFlag = "-1";
 }
+
+if ($debug == "TRUE") { die("Debug output complete"); }
 ?>
 <!DOCTYPE html><head>
   <meta charset='UTF-8'/>
