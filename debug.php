@@ -38,7 +38,7 @@ $customIcon         = (empty($usrIni["customIcon"])       ? "/admin/img/favicon.
 $customLogo         = (empty($usrIni["customLogo"])       ? "https://wally3k.github.io/style/phv.svg" : $usrIni["customLogo"]);
 $blockImage         = (empty($usrIni["blockImage"])       ? "https://wally3k.github.io/style/blocked.svg" : $usrIni["blockImage"]);
 $blankGif           = (empty($usrIni["blankGif"])         ? "TRUE" : "FALSE"); // Unset Default: Enabled
-$blankGif           = ($blankGif == "FALSE" && in_array($usrIni["blankGif"]) ? "TRUE" : "FALSE"); // Default: Enabled
+$blankGif           = ($blankGif == "FALSE" && in_array($usrIni["blankGif"], array('true','TRUE','yes','YES','1'), true) ? "TRUE" : "FALSE"); // Default: Enabled
 $allowWhitelisting  = (empty($usrIni["allowWhitelisting"])? "TRUE" : "FALSE"); // Unset Default: Enabled
 $allowWhitelisting  = ($allowWhitelisting == "FALSE" && in_array($usrIni["allowWhitelisting"], array('false','FALSE','no','NO','0'), true) ? "FALSE" : "TRUE"); // Default: Enabled
 $ignoreUpdate       = (empty($usrIni["ignoreUpdate"])? "FALSE" : "TRUE"); // Unset Default: Disabled
@@ -136,8 +136,15 @@ if ($serverName == "pi.hole") {
 }
 
 // Some error handling
-if (empty(glob("/etc/pihole/*domains"))) die("[ERROR]: There are no blacklists in the Pi-hole folder! Please update the list of ad-serving domains.");
-$adlist = (is_file("/etc/pihole/adlists.list") ? "/etc/pihole/adlists.list" : "adlists.default");
+if (empty(glob("/etc/pihole/*domains"))) die("[ERROR]: There are no blacklists in the Pi-hole folder! Please update the list of ad-serving domains by running pihole -g.");
+
+if (is_file("/etc/pihole/adlists.list")) {
+  $adlist = "/etc/pihole/adlists.list";
+} elseif (is_file("/etc/pihole/adlists.default")) {
+  $adlist = "/etc/pihole/adlists.default";
+} else {
+  die("[ERROR]: Neither 'adlists.list' or 'adlists.default' were found within /etc/pihole");
+}
 
 // Check for update
 function checkUpdate() {
@@ -180,7 +187,7 @@ if ($listMatches[0] == "list") {
 // Error correction (EG: If gravity has been updated and adlists.list has been removed)
 if ($featuredTotal > $urlListCount) {
 	if ($debug == "TRUE") { echo "Featured total list was larger than urlListCount\n"; }
-	//$featuredTotal = "0";
+	$featuredTotal = "0";
 }
 
 if ($debug == "TRUE") { echo "[\$featuredTotal] Featured Total: $featuredTotal\n"; }
