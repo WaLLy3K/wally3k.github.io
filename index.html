@@ -13,22 +13,23 @@
 </header>
 <main>
 <h2>Welcome!</h2>
-<div>Here's a list of all the blocklists I recommend, compatible with the network-wide adblocking tool known as <a href="https://pi-hole.net">Pi-hole</a>.<br/>
+<div>Here's a list of all the blocklists I suggest using, compatible with the network-wide adblocking tool known as <a href="https://pi-hole.net">Pi-hole</a>.<br/>
 <br/>
 There are some things worth noting:
 <ul>
-  <li>If you're looking for my other project, you can find <a href="https://github.com/WaLLy3K/Pi-hole-Block-Page">Pi-hole Block Page here</a></li>
-  <li>Some of these lists are mirrored by myself, due to the source not being a 'domains only' list. If this concerns you, please don't use them</li>
+  <li>If you're looking for my other project, you can find <b><a href="https://github.com/WaLLy3K/Pi-hole-Block-Page">Pi-hole Block Page here</a></b></li>
   <li>If you want a (relatively) hands-off adblocking experience, consider not installing any 'suspicious' lists</li>
+  <li>Lists marked with a tick (&#10004;) are suggested for their minimal false positives</li>
+  <li>Some of these lists are mirrored by myself, due to the source not being a 'domains only' list. If this concerns you, please don't use them</li>
   <li>These lists are installed to <code>/etc/pihole/adlists.list</code>, which needs to be created if it doesn't already exist</li>
-  <li>The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a>.</li>
+  <li>The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a></li>
 </ul>
-<b style="color: red;">A word of warning:</b>
+<b style="color: red;">A word of warning (i.e: Please DO NOT just install all these lists at once):</b>
 <ul>
-  <li>Installing all of these lists will result in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads</li>
-  <li>If you want to continue, consider skipping a list known for false positives (i.e: <code>hosts.eladkarako.com</code>)</li>
-  <li>Alternatively, increase PHP's memory: <code>memory_limit = 180M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>)</li>
-  <li>Raising PHP's memory beyond this suggestion may result in your Pi locking up, as multiple "children" with this limit are spawned within <code>/etc/php5/fpm/pool.d/www.conf</code></li>
+  <li>Installing all of these lists <b>will result</b> in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads</li>
+  <li>If this doesn't deter you, consider skipping a couple of lists known for false positives (e.g: <code>hosts.eladkarako.com</code>)</li>
+  <li>If you have hardware with 1GB of RAM or more, you may increase PHP's memory: <code>memory_limit = 180M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>)</li>
+  <li>Raising PHP's memory beyond this suggestion may result in your hardware becoming unresponsive (freezing), as multiple 'children' with this limit are spawned via <code>/etc/php5/fpm/pool.d/www.conf</code></li>
 </ul>
 </div>
 
@@ -55,19 +56,19 @@ There are some things worth noting:
 
 <h2>Advertising Lists:</h2>
 <ul class="url-list">
-  <li><a href="https://adaway.org">AdAway</a>: https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt</li>
-  <li><a href="https://disconnect.me">Disconnect Ads</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</li>
-  <li><a href="https://github.com/easylist/easylist/">Easylist</a>: http://v.firebog.net/hosts/Easylist.txt</li>
-  <li><a href="https://hosts-file.net">hpHosts Ads/Trackers</a>: https://hosts-file.net/ad_servers.txt</li>
+  <li>&#10004; <a href="https://adaway.org">AdAway</a>: https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt</li>
+  <li>&#10004; <a href="https://disconnect.me">Disconnect Ads</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</li>
+  <li>&#10004; <a href="https://hosts-file.net">hpHosts Ads/Trackers</a>: https://hosts-file.net/ad_servers.txt</li>
+  <li>&#10004; <a href="https://github.com/easylist/easylist/">Easylist</a>: http://v.firebog.net/hosts/Easylist.txt</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spotify Ads</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Unchecky Ads</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts</li>
 </ul>
 
 <h2>Tracking &amp; Telemetry Lists:</h2>
 <ul class="url-list">
-  <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers</a>: http://v.firebog.net/hosts/Airelle-trc.txt</li>
-  <li><a href="https://github.com/easylist/easylist/">Easyprivacy</a>: http://v.firebog.net/hosts/Easyprivacy.txt</li>
-  <li><a href="https://github.com/quidsup/notrack">Quidsup Trackers</a>: https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</li>
+  <li>&#10004; <a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers</a>: http://v.firebog.net/hosts/Airelle-trc.txt</li>
+  <li>&#10004; <a href="https://github.com/easylist/easylist/">Easyprivacy</a>: http://v.firebog.net/hosts/Easyprivacy.txt</li>
+  <li>&#10004; <a href="https://github.com/quidsup/notrack">Quidsup Trackers</a>: https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Trackers</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Win10 Telemetry</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/WindowsSpyBlocker/spy-win10/hosts</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Win8 Telemetry</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/WindowsSpyBlocker/spy-win81/hosts</li>
@@ -76,21 +77,21 @@ There are some things worth noting:
 
 <h2>Malicious Lists:</h2>
 <ul class="url-list">
-  <li><a href="https://bitbucket.org/ethanr/dns-blacklists">Mandiant APT1 Report</a>: https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt</li>
-  <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk</a>: http://v.firebog.net/hosts/Airelle-hrsk.txt</li>
-  <li><a href="https://disconnect.me">Disconnect Malvertising</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt</li>
-  <li><a href="https://www.malwaredomains.com">DNS-BH Malware</a>: http://mirror1.malwaredomains.com/files/justdomains</li>
-  <li><a href="https://hosts-file.net">hpHosts Exploit</a>: https://hosts-file.net/exp.txt</li>
-  <li><a href="https://hosts-file.net">hpHosts Malware</a>: https://hosts-file.net/emd.txt</li>
-  <li><a href="https://hosts-file.net">hpHosts Phishing</a>: https://hosts-file.net/psh.txt</li>
-  <li><a href="https://www.malwaredomains.com/wordpress/?p=1282">'Immortal' Malware Domains</a>: https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt</li>
-  <li><a href="https://www.malwaredomainlist.com">Malware Domain List</a>: https://www.malwaredomainlist.com/hostslist/hosts.txt</li>
-  <li><a href="https://openphish.com/">Openphish</a>: https://openphish.com/feed.txt</li>
+  <li>&#10004; <a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk</a>: http://v.firebog.net/hosts/Airelle-hrsk.txt</li>
+  <li>&#10004; <a href="https://disconnect.me">Disconnect Malvertising</a>: https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt</li>
+  <li>&#10004; <a href="https://www.malwaredomains.com">DNS-BH Malware</a>: http://mirror1.malwaredomains.com/files/justdomains</li>
+  <li>&#10004; <a href="https://hosts-file.net">hpHosts Exploit</a>: https://hosts-file.net/exp.txt</li>
+  <li>&#10004; <a href="https://hosts-file.net">hpHosts Malware</a>: https://hosts-file.net/emd.txt</li>
+  <li>&#10004; <a href="https://hosts-file.net">hpHosts Phishing</a>: https://hosts-file.net/psh.txt</li>
+  <li>&#10004; <a href="https://www.malwaredomains.com/wordpress/?p=1282">'Immortal' Malware Domains</a>: https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt</li>
+  <li>&#10004; <a href="https://www.malwaredomainlist.com">Malware Domain List</a>: https://www.malwaredomainlist.com/hostslist/hosts.txt</li>
+  <li>&#10004; <a href="https://bitbucket.org/ethanr/dns-blacklists">Mandiant APT1 Report</a>: https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt</li>
+  <li>&#10004; <a href="https://openphish.com/">Openphish</a>: https://openphish.com/feed.txt</li>
   <li><a href="https://github.com/quidsup/notrack">Quidsup Malicious</a>: https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt</li>
-  <li><a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker</a>: https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</li>
+  <li>&#10004; <a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker</a>: https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</li>
   <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Risky Hosts</a>: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</li>
   <li><a href="http://www.shallalist.de">Shalla Malicious</a>: http://v.firebog.net/hosts/Shalla-mal.txt</li>
-  <li><a href="https://zeustracker.abuse.ch">Zeus Tracker</a>: https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</li>
+  <li>&#10004; <a href="https://zeustracker.abuse.ch">Zeus Tracker</a>: https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</li>
 </ul>
 
 <h2>Whitelist Suggestions:</h2>
