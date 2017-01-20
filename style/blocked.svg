@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="18">
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="16">
  <defs><style>
   circle {stroke: rgba(152,2,2,0.5); fill: none; stroke-width: 2;}
   rect {fill: rgba(152,2,2,0.5);}
