@@ -28,7 +28,7 @@ There are some things worth noting:
 <ul>
   <li>Installing all of these lists <b>will result</b> in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads</li>
   <li>If this doesn't deter you, consider skipping a couple of lists known for false positives (e.g: <code>hosts.eladkarako.com</code>)</li>
-  <li>If you have hardware with 1GB of RAM or more, you may increase PHP's memory: <code>memory_limit = 180M</code> within <code>/etc/php5/fpm/php.ini</code> (and then <code>sudo service php5-fpm restart</code>)</li>
+  <li>If you have hardware with 1GB of RAM or more, you may increase PHP's memory: <code>memory_limit = 180M</code> within <code>/etc/php5/fpm/php.ini</code> OR <code>/etc/php5/cgi/php.ini</code> (FPM if it exists, otherwise CGI, and then <code>sudo service php5-fpm restart</code> OR <code>sudo service php5-cgi restart</code>)</li>
   <li>Raising PHP's memory beyond this suggestion may result in your hardware becoming unresponsive (freezing), as multiple 'children' with this limit are spawned via <code>/etc/php5/fpm/pool.d/www.conf</code></li>
 </ul>
 </div>
