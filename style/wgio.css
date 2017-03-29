@@ -1,6 +1,5 @@
-/* Stornur: The primary style for wally3k.github.io */
-/* by WaLLy3K 01FEB15 */
-/* Developed on: Chrome v55 Win & macOS, Firefox v51 Win, IE11 Win, Safari 10 macOS, Safari iOS 9.3.3 */
+/* Stornur: The primary style for wally3k.github.io, by WaLLy3K */
+/* Tested on: Chrome v57 Win & macOS, Firefox v52 Win, IE11 Win, Safari 10 macOS, Safari iOS 10.3 */
 
 /* http://necolas.github.io/normalize.css */
 html { font-family: sans-serif; line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
@@ -55,19 +54,32 @@ b { font-weight: bold; }
 i { font-style: italic; }
 :-ms-input-placeholder { color: rgba(68,68,68,0.43) !important; }
 
+code {
+  font: 1.2rem Consolas, monospace;
+  padding: 0 2px;
+  white-space: nowrap;
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 2px;
+}
+
 body {
   -webkit-text-size-adjust: 100%;
   background: rgb(230,230,230) repeat fixed;
-  background-image: url("bg.svg"), -webkit-linear-gradient(bottom, transparent, rgba(0,0,0,0.05));
   background-image: url("bg.svg"), linear-gradient(to top, transparent, rgba(0,0,0,0.05));
   font: 1.4rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.8rem !important;
+  line-height: 1.8rem;
   color: rgb(68,68,68);
 }
 
-header, main {
+header, main, label, .buttons * {
   border: 1px solid rgba(0,0,0,0.2);
   box-shadow: 0 0 2px 1px rgba(0,0,0,0.04);
+}
+
+h2 {
+  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right, rgba(0,0,0,0.2), transparent 80%) no-repeat;
 }
 
 header {
@@ -76,7 +88,6 @@ header {
   border-width: 1px 0;
   border-top-color: rgba(255,255,255,0.8);
   background: rgb(240,240,240);
-  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.05), transparent);
   background-image: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
   font: bold 1rem 'Trebuchet MS', sans-serif;
   text-shadow: 0 1px rgba(255,255,255,0.8);
@@ -108,6 +119,7 @@ header div {
 main {
   box-sizing: border-box;
   width: 80%;
+  min-width: 600px;
   margin: 4px auto;
   padding: 4px;
   background-color: rgba(255,255,255,0.9);
@@ -115,74 +127,36 @@ main {
   overflow: hidden;
 }
 
-main h2:first-child { margin-top: 0; }
+footer {
+  width: 86%;
+  margin: 4px auto;
+  font: 1.1rem Consolas, monospace;
+  text-align: center;
+}
+
+main *:first-child { margin-top: 0; }
 main *:last-child { margin-bottom: 0; }
 
 h2 {
-  font-size: 1.8rem;
-  font-weight: normal;
   margin: 12px 0 4px 0;
   padding-bottom: 3px;
-  background: rgba(0,0,0,0.2);
-  background: -webkit-linear-gradient(left, rgba(0,0,0,0.2), transparent 80%) no-repeat;
-  background: linear-gradient(to right, rgba(0,0,0,0.2), transparent 80%) no-repeat;
+  font-size: 1.8rem;
+  font-weight: normal;
   background-size: 100% 1px;
   background-position: 0 100%;
 }
 
-main p, main div { 
-  margin: 4px 8px 12px 4px;
-}
+main p, main div { margin: 4px 8px 12px 4px; }
 
 main > div > p,
 main > div > ul,
 main > h2 + ul {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
-ul { margin: 4px 0 8px 0; padding-left: 12px; overflow: auto; -webkit-overflow-scrolling: touch; }
+ul { margin: 0; padding-left: 12px; }
 li { list-style-type: none; }
-li:before { content: "\0203A"; color: rgba(68,68,68,0.7); font-weight: bold; position: absolute; margin-left: -12px; margin-top: -1px; position: absolute; z-index: 1; }
-.tick:before { content: "\2713"; color: inherit; font-size: 0.9rem; margin-top: 0; margin-left: -13px; }
-
-/* Toggle Box */
-#tg { display: none; }
-.url-list li > a:first-child { display: none; }
-#tg:checked ~ .url-list li > a:first-child { display: inline-block !important; }
-
-.bdToggle label { background-color: rgba(60,140,220,0.4); }
-.bdWhitelist a:after { content: ":"; color: rgb(68,68,68); }
-.bdWhitelist a:hover:after { color: rgb(68,68,68); }
-
-/* Style HTTP and HTTPS links */
-.url-list a[href^="http:"]:not(:first-child) { color: inherit; }
-.url-list a[href^="https:"]:not(:first-child) { color: rgb(20,120,60); }
-
-.url-list a[href^="https:"]:not(:first-child):before {
-  content: ""; 
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc5JyBoZWlnaHQ9JzEyJyB2aWV3Qm94PScwIDAgOSAxMic+PHBhdGggZmlsbD0nIzUwYTAyOCcgZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNOCwzLjVhMy41LDMuNSwwLDAsMC03LDBWNUg4VjMuNVptLTIsMGExLjUsMS41LDAsMCwwLTMsMFY1SDZWMy41Wk0xLjUsNWg2QTEuNSwxLjUsMCwwLDEsOSw2LjV2NEExLjUsMS41LDAsMCwxLDcuNSwxMmgtNkExLjUsMS41LDAsMCwxLDAsMTAuNXYtNEExLjUsMS41LDAsMCwxLDEuNSw1WicvPjwvc3ZnPg==");
-  width: 9px;
-  height: 12px;
-  display: inline-block;
-  margin-bottom: -1px;
-  margin-right: 2px;
-}
-
-code {
-  font: 1.2rem Consolas, monospace;
-  padding: 0 2px;
-  white-space: nowrap;
-  background-color:rgba(255,255,255,0.5);
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 2px;
-}
-
-footer {
-  margin: 4px auto;
-  width: 86%;
-  font: 1.1rem Consolas, monospace;
-  text-align: center;
-}
+li:before { content: "\0203A"; position: absolute; background-color: rgba(255,255,255,0.9); margin-left: -12px; opacity: 0.7; font-size: 1.5rem; font-weight: bold; }
 
 .buttons {
   display: table;
@@ -193,7 +167,7 @@ footer {
   border-spacing: 4px 0;
 }
 
-.buttons *:not(#pw) {
+.buttons *:not(input[type=password]) {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -210,19 +184,52 @@ label, .buttons * {
   text-align: center;
   text-shadow: 0 1px rgba(255,255,255,0.22);
   background: #F8F8F8;
-  background: -webkit-linear-gradient(top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
-  background: linear-gradient(to bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
-  border: 1px solid rgba(0,0,0,0.15);
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.05));
   border-radius: 4px;
   margin-right: 4px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Blacklist Domains */
+.tick:before {
+  content: "\2713";
+  font-size: 1rem;
+  margin-top: 1px;
+  margin-left: -14px;
+  opacity: 1;
+}
+
+/* BD: Checkbox Toggle */
+#bdTog { display: none; }
+.url-list li > a:first-child { display: none; }
+#bdTog:checked ~ .url-list li > a:first-child { display: initial; }
+.bdToggle label { background-color: rgba(60,140,220,0.4); }
+
+.bdWhitelist a:after { content: ":"; color: rgb(68,68,68); }
+.bdWhitelist a:hover:after { color: rgb(68,68,68); }
+
+.url-list { -webkit-overflow-scrolling: touch; }
+
+/* BD: Style HTTP/S links */
+.url-list a[href^="http:"]:not(:first-child) { color: inherit; }
+.url-list a[href^="https:"]:not(:first-child), #tls { color: rgb(20,120,60); }
+
+.url-list a[href^="https:"]:not(:first-child):before, #tls:before {
+  content: ""; 
+  display: inline-block;
+  width: 9px;
+  height: 12px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc5JyBoZWlnaHQ9JzEyJz48ZGVmcz48c3R5bGU+cGF0aCxyZWN0e2ZpbGw6IzUwYTAyODt9PC9zdHlsZT48L2RlZnM+PHBhdGggZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNOCwzLjVhMy41LDMuNSwwLDAsMC03LDBWNUg4VjMuNVptLTIsMGExLjUsMS41LDAsMCwwLTMsMFY1SDZWMy41WicvPjxyZWN0IHk9JzUnIHdpZHRoPSc5JyBoZWlnaHQ9JzcnIHJ4PScxJyByeT0nMScvPjwvc3ZnPg==");
+}
+
+/* Small Screen Wrapping */
+@media only screen and (max-width: 1024px) {
+  main { width: 95%; }
+  .url-list { white-space: nowrap; overflow: auto; }
 }
 
 /* iPhone: Portrait */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
-  header:not(#block) div span:before { content: "Mobile"; }
-  main { width: 100%; border-radius: 0; margin: 0 0 4px 0; border-width: 0 0 1px 0; }
-  ul { overflow-y: hidden; overflow-x: scroll; white-space: nowrap; }
-  li:before { margin-top: -1px; }
-  .tick:before  { margin-top: 1px; }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+  main { width: 100%; min-width: initial; border-radius: 0; margin: 0 0 4px 0; border-width: 0 0 1px 0; }
 }
