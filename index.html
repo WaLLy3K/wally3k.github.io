@@ -20,83 +20,83 @@
     <li>The changelog for this page <a href="https://github.com/WaLLy3K/wally3k.github.io/commits/master/index.html">is found here</a> on GitHub</li>
     <li>If you're looking for my other project, you can find <b><a href="https://github.com/WaLLy3K/Pi-hole-Block-Page">'Pi-hole Block Page' here</a></b></li>
     <li>If you want a (relatively) hands-off adblocking experience, consider not installing any 'suspicious' lists</li>
-    <li class="tick">Lists marked with a tick are suggested for their minimal false positives</li>
+    <li class="tick">Lists bulleted with a tick are suggested for their minimal false positives</li>
     <li>These lists are installed to <code>/etc/pihole/adlists.list</code>, which needs to be created if it doesn't already exist</li>
     <li>The formatting for <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a></li>
-    <li>Some of these lists are mirrored by myself, due to the source not being a 'domains only' list. If this (or the lack of SSL) concerns you, then <u>don't use them</u></li>
+    <li>Some of these lists are mirrored by myself, due to the source not being a 'domains only' list. If this (or the lack of <span id="tls">TLS</span>) concerns you, then <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists#how-to-parse-a-list-to-get-just-the-domain">consider parsing them yourself</a></li>
   </ul>
 </div>
 
 <div>
   <b><span style="color: red;">Installing too many lists can <u>BREAK STUFF</u></span>. Here's how you can fix that:</b>
-  <p>Blocking over 1 million domains can result in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads. The recommended way to work around this is to avoid certain lists known for <i>many</i> false positives, such as <code>hosts.eladkarako.com</code>. If you're a masochist <i>and</i> have hardware with 1GB of RAM or more, you can increase PHP's memory by changing <code>memory_limit</code> to read <code>180M</code> within its config. That's found at <code>/etc/php5/<b>fpm</b>/php.ini</code> OR <code>/etc/php5/<b>cgi</b>/php.ini</code>, and then made active by <code>sudo service php5-<b>fpm</b> restart</code> OR <code>sudo service php5-<b>cgi</b> restart</code>. Raising PHP's memory beyond this suggestion may result in your hardware becoming unresponsive!</p>
+  <p>Blocking over 1 million domains can result in the <a href="http://pi.hole/admin/queries.php">Query Log tool</a> of Pi-hole to return an <code>ajax datatables</code> error, when it loads. The recommended way to work around this is to avoid certain lists known for being <i>extremely overzealous</i>, such as <code>hosts.eladkarako.com</code>. If you're a masochist <i>and</i> have hardware with 1GB of RAM or more, you can increase PHP's memory by changing <code>memory_limit</code> to read <code>180M</code> within its config. That's found at <code>/etc/php5/<b>fpm</b>/php.ini</code> OR <code>/etc/php5/<b>cgi</b>/php.ini</code>, and then made active by <code>sudo service php5-<b>fpm</b> restart</code> OR <code>sudo service php5-<b>cgi</b> restart</code>. Raising PHP's memory beyond this suggestion may result in your hardware becoming unresponsive!</p>
 </div>
 
 <div class="buttons bdToggle">
-  <label for="tg">Toggle list sources</label>
+  <label for="bdTog">Toggle list sources</label>
 </div>
-<input type="checkbox" id="tg">
+<input type="checkbox" id="bdTog">
 
 <h2>Suspicious Lists:</h2>
 <ul class="url-list">
-  <li><a href="http://www.sa-blacklist.stearns.org/sa-blacklist">Bill Stearn:&nbsp;</a><a href="http://v.firebog.net/hosts/BillStearns.txt">http://v.firebog.net/hosts/BillStearns.txt</a>
-  <li><a href="http://sysctl.org/cameleon">CAMELEON:&nbsp;</a><a href="http://sysctl.org/cameleon/hosts">http://sysctl.org/cameleon/hosts</a></li>
-  <li><a href="https://dshield.org">DSHEILD Suspicious:&nbsp;</a><a href="https://www.dshield.org/feeds/suspiciousdomains_Low.txt">https://www.dshield.org/feeds/suspiciousdomains_Low.txt</a></li>
-  <li><a href="http://hosts.eladkarako.com">Elad Karako:&nbsp;</a><a href="https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt">https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt</a></li>
-  <li><a href="https://blocklist.kowabit.de/list.txt">Kowabit BoD:&nbsp;</a><a href="http://v.firebog.net/hosts/Kowabit.txt">http://v.firebog.net/hosts/Kowabit.txt</a></li>
-  <li><a href="http://www.joewein.de/sw/bl-text.htm">Joe Wein:&nbsp;</a><a href="http://www.joewein.net/dl/bl/dom-bl-base.txt">http://www.joewein.net/dl/bl/dom-bl-base.txt</a></li>
-  <li><a href="https://mahakala.is">Mahakala:&nbsp;</a><a href="https://adblock.mahakala.is">https://adblock.mahakala.is</a></li>
-  <li><a href="https://hosts-file.net">hpHosts Spam:&nbsp;</a><a href="https://hosts-file.net/grm.txt">https://hosts-file.net/grm.txt</a></li>
-  <li><a href="https://hostsfile.mine.nu">Andy Short:&nbsp;</a><a href="https://hostsfile.mine.nu/hosts0.txt">https://hostsfile.mine.nu/hosts0.txt</a></li>
-  <li><a href="https://github.com/piwik/referrer-spam-blacklist">Piwik Referrer Spam:&nbsp;</a><a href="https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt">https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt</a></li>
-  <li><a href="https://github.com/ReddestDream/reddestdream.github.io">ReddestDream:&nbsp;</a><a href="https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts">https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts</a></li>
-  <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks KAD:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts</a></li>
-  <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spammers:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts</a></li>
-  <li><a href="http://www.securemecca.com">SecureMecca:&nbsp;</a><a href="http://securemecca.com/Downloads/hosts.txt">http://securemecca.com/Downloads/hosts.txt</a></li>
-  <li><a href="http://someonewhocares.org">Someone Who Cares:&nbsp;</a><a href="http://someonewhocares.org/hosts/zero/hosts">http://someonewhocares.org/hosts/zero/hosts</a></li>
-  <li><a href="https://github.com/Dawsey21/Lists/">Spam404:&nbsp;</a><a href="https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt">https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt</a></li>
-  <li><a href="https://github.com/vokins/yhosts">Vokins yhosts:&nbsp;</a><a href="https://raw.githubusercontent.com/vokins/yhosts/master/hosts">https://raw.githubusercontent.com/vokins/yhosts/master/hosts</a></li>
-  <li><a href="http://winhelp2002.mvps.org">Winhelp2002 MVPS:&nbsp;</a><a href="http://winhelp2002.mvps.org/hosts.txt">http://winhelp2002.mvps.org/hosts.txt</a></li>
+  <li><a href="http://www.sa-blacklist.stearns.org/sa-blacklist">Bill Stearn: </a><a href="http://v.firebog.net/hosts/BillStearns.txt">http://v.firebog.net/hosts/BillStearns.txt</a>
+  <li><a href="http://sysctl.org/cameleon">CAMELEON: </a><a href="http://sysctl.org/cameleon/hosts">http://sysctl.org/cameleon/hosts</a></li>
+  <li><a href="https://dshield.org">DSHEILD Suspicious: </a><a href="https://www.dshield.org/feeds/suspiciousdomains_Low.txt">https://www.dshield.org/feeds/suspiciousdomains_Low.txt</a></li>
+  <li><a href="http://hosts.eladkarako.com">Elad Karako: </a><a href="https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt">https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/_raw__hosts.txt</a></li>
+  <li><a href="https://blocklist.kowabit.de/list.txt">Kowabit BoD: </a><a href="http://v.firebog.net/hosts/Kowabit.txt">http://v.firebog.net/hosts/Kowabit.txt</a></li>
+  <li><a href="http://www.joewein.de/sw/bl-text.htm">Joe Wein: </a><a href="http://www.joewein.net/dl/bl/dom-bl-base.txt">http://www.joewein.net/dl/bl/dom-bl-base.txt</a></li>
+  <li><a href="https://mahakala.is">Mahakala: </a><a href="https://adblock.mahakala.is">https://adblock.mahakala.is</a></li>
+  <li><a href="https://hosts-file.net">hpHosts Spam: </a><a href="https://hosts-file.net/grm.txt">https://hosts-file.net/grm.txt</a></li>
+  <li><a href="https://hostsfile.mine.nu">Andy Short: </a><a href="https://hostsfile.mine.nu/hosts0.txt">https://hostsfile.mine.nu/hosts0.txt</a></li>
+  <li><a href="https://github.com/piwik/referrer-spam-blacklist">Piwik Referrer Spam: </a><a href="https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt">https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt</a></li>
+  <li><a href="https://github.com/ReddestDream/reddestdream.github.io">ReddestDream: </a><a href="https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts">https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts</a></li>
+  <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks KAD: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts</a></li>
+  <li><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spammers: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts</a></li>
+  <li><a href="http://www.securemecca.com">SecureMecca: </a><a href="http://securemecca.com/Downloads/hosts.txt">http://securemecca.com/Downloads/hosts.txt</a></li>
+  <li><a href="http://someonewhocares.org">Someone Who Cares: </a><a href="http://someonewhocares.org/hosts/zero/hosts">http://someonewhocares.org/hosts/zero/hosts</a></li>
+  <li><a href="https://github.com/Dawsey21/Lists/">Spam404: </a><a href="https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt">https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt</a></li>
+  <li><a href="https://github.com/vokins/yhosts">Vokins yhosts: </a><a href="https://raw.githubusercontent.com/vokins/yhosts/master/hosts">https://raw.githubusercontent.com/vokins/yhosts/master/hosts</a></li>
+  <li><a href="http://winhelp2002.mvps.org">Winhelp2002 MVPS: </a><a href="http://winhelp2002.mvps.org/hosts.txt">http://winhelp2002.mvps.org/hosts.txt</a></li>
 </ul>
 
 <h2>Advertising Lists:</h2>
 <ul class="url-list">
-  <li class="tick"><a href="https://adaway.org">AdAway:&nbsp;</a><a href="https://adaway.org/hosts.txt">https://adaway.org/hosts.txt</a></li>
-  <li class="tick"><a href="https://filters.adtidy.org/extension/chromium/filters/15.txt">Adguard DNS:&nbsp;</a><a href="http://v.firebog.net/hosts/AdguardDNS.txt">http://v.firebog.net/hosts/AdguardDNS.txt</a></li>
-  <li class="tick"><a href="https://disconnect.me">Disconnect Ads:&nbsp;</a><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</a></li>
-  <li class="tick"><a href="https://hosts-file.net">hpHosts Ads/Trackers:&nbsp;</a><a href="https://hosts-file.net/ad_servers.txt">https://hosts-file.net/ad_servers.txt</a></li>
-  <li class="tick"><a href="https://github.com/easylist/easylist/">Easylist:&nbsp;</a><a href="http://v.firebog.net/hosts/Easylist.txt">http://v.firebog.net/hosts/Easylist.txt</a></li>
-  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spotify Ads:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts</a></li>
-  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Unchecky Ads:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts</a></li>
+  <li class="tick"><a href="https://adaway.org">AdAway: </a><a href="https://adaway.org/hosts.txt">https://adaway.org/hosts.txt</a></li>
+  <li class="tick"><a href="https://filters.adtidy.org/extension/chromium/filters/15.txt">Adguard DNS: </a><a href="http://v.firebog.net/hosts/AdguardDNS.txt">http://v.firebog.net/hosts/AdguardDNS.txt</a></li>
+  <li class="tick"><a href="https://disconnect.me">Disconnect Ads: </a><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</a></li>
+  <li class="tick"><a href="https://hosts-file.net">hpHosts Ads/Trackers: </a><a href="https://hosts-file.net/ad_servers.txt">https://hosts-file.net/ad_servers.txt</a></li>
+  <li class="tick"><a href="https://github.com/easylist/easylist/">Easylist: </a><a href="http://v.firebog.net/hosts/Easylist.txt">http://v.firebog.net/hosts/Easylist.txt</a></li>
+  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spotify Ads: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts</a></li>
+  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Unchecky Ads: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts</a></li>
 </ul>
 
 <h2>Tracking &amp; Telemetry Lists:</h2>
 <ul class="url-list">
-  <li class="tick"><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers:&nbsp;</a><a href="http://v.firebog.net/hosts/Airelle-trc.txt">http://v.firebog.net/hosts/Airelle-trc.txt</a></li>
-  <li class="tick"><a href="https://github.com/easylist/easylist/">Easyprivacy:&nbsp;</a><a href="http://v.firebog.net/hosts/Easyprivacy.txt">http://v.firebog.net/hosts/Easyprivacy.txt</a></li>
-  <li class="tick"><a href="https://github.com/quidsup/notrack">Quidsup Trackers:&nbsp;</a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt">https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</a></li>
-  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Trackers:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts</a></li>
-  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Microsoft Telemetry:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/tyzbit/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/tyzbit/hosts</a></li>
-  <li><a href="http://v.firebog.net/hosts/static/SamsungSmart.txt">Samsung SmartTV Domains:&nbsp;</a><a href="http://v.firebog.net/hosts/static/SamsungSmart.txt">http://v.firebog.net/hosts/static/SamsungSmart.txt</a></li>
+  <li class="tick"><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers: </a><a href="http://v.firebog.net/hosts/Airelle-trc.txt">http://v.firebog.net/hosts/Airelle-trc.txt</a></li>
+  <li class="tick"><a href="https://github.com/easylist/easylist/">Easyprivacy: </a><a href="http://v.firebog.net/hosts/Easyprivacy.txt">http://v.firebog.net/hosts/Easyprivacy.txt</a></li>
+  <li class="tick"><a href="https://github.com/quidsup/notrack">Quidsup Trackers: </a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt">https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</a></li>
+  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Trackers: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts</a></li>
+  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Microsoft Telemetry: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/tyzbit/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/tyzbit/hosts</a></li>
+  <li><a href="http://v.firebog.net/hosts/static/SamsungSmart.txt">Samsung SmartTV Domains: </a><a href="http://v.firebog.net/hosts/static/SamsungSmart.txt">http://v.firebog.net/hosts/static/SamsungSmart.txt</a></li>
 </ul>
 
 <h2>Malicious Lists:</h2>
 <ul class="url-list">
-  <li class="tick"><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk:&nbsp;</a><a href="http://v.firebog.net/hosts/Airelle-hrsk.txt">http://v.firebog.net/hosts/Airelle-hrsk.txt</a></li>
-  <li class="tick"><a href="https://disconnect.me">Disconnect Malvertising:&nbsp;</a><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt</a></li>
-  <li class="tick"><a href="https://www.malwaredomains.com">DNS-BH Malware:&nbsp;</a><a href="https://mirror1.malwaredomains.com/files/justdomains">https://mirror1.malwaredomains.com/files/justdomains</a></li>
-  <li class="tick"><a href="https://hosts-file.net">hpHosts Exploit:&nbsp;</a><a href="https://hosts-file.net/exp.txt">https://hosts-file.net/exp.txt</a></li>
-  <li class="tick"><a href="https://hosts-file.net">hpHosts Malware:&nbsp;</a><a href="https://hosts-file.net/emd.txt">https://hosts-file.net/emd.txt</a></li>
-  <li class="tick"><a href="https://hosts-file.net">hpHosts Phishing:&nbsp;</a><a href="https://hosts-file.net/psh.txt">https://hosts-file.net/psh.txt</a></li>
-  <li class="tick"><a href="https://www.malwaredomains.com/wordpress/?p=1282">'Immortal' Malware Domains:&nbsp;</a><a href="https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt">https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt</a></li>
-  <li class="tick"><a href="https://www.malwaredomainlist.com">Malware Domain List:&nbsp;</a><a href="https://www.malwaredomainlist.com/hostslist/hosts.txt">https://www.malwaredomainlist.com/hostslist/hosts.txt</a></li>
-  <li class="tick"><a href="https://bitbucket.org/ethanr/dns-blacklists">Mandiant APT1 Report:&nbsp;</a><a href="https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt">https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt</a></li>
-  <li class="tick"><a href="https://openphish.com/">Openphish:&nbsp;</a><a href="https://openphish.com/feed.txt">https://openphish.com/feed.txt</a></li>
-  <li class="tick"><a href="https://github.com/quidsup/notrack">Quidsup Malicious:&nbsp;</a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt">https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt</a></li>
-  <li class="tick"><a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker:&nbsp;</a><a href="https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt">https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</a></li>
-  <li class="tick"><a href="http://www.shallalist.de">Shalla Malicious:&nbsp;</a><a href="http://v.firebog.net/hosts/Shalla-mal.txt">http://v.firebog.net/hosts/Shalla-mal.txt</a></li>
-  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Risky Hosts:&nbsp;</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</a></li>
-  <li class="tick"><a href="https://zeustracker.abuse.ch">Zeus Tracker:&nbsp;</a><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist">https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</a></li>
+  <li class="tick"><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk: </a><a href="http://v.firebog.net/hosts/Airelle-hrsk.txt">http://v.firebog.net/hosts/Airelle-hrsk.txt</a></li>
+  <li class="tick"><a href="https://disconnect.me">Disconnect Malvertising: </a><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt</a></li>
+  <li class="tick"><a href="https://www.malwaredomains.com">DNS-BH Malware: </a><a href="https://mirror1.malwaredomains.com/files/justdomains">https://mirror1.malwaredomains.com/files/justdomains</a></li>
+  <li class="tick"><a href="https://hosts-file.net">hpHosts Exploit: </a><a href="https://hosts-file.net/exp.txt">https://hosts-file.net/exp.txt</a></li>
+  <li class="tick"><a href="https://hosts-file.net">hpHosts Malware: </a><a href="https://hosts-file.net/emd.txt">https://hosts-file.net/emd.txt</a></li>
+  <li class="tick"><a href="https://hosts-file.net">hpHosts Phishing: </a><a href="https://hosts-file.net/psh.txt">https://hosts-file.net/psh.txt</a></li>
+  <li class="tick"><a href="https://www.malwaredomains.com/wordpress/?p=1282">'Immortal' Malware Domains: </a><a href="https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt">https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt</a></li>
+  <li class="tick"><a href="https://www.malwaredomainlist.com">Malware Domain List: </a><a href="https://www.malwaredomainlist.com/hostslist/hosts.txt">https://www.malwaredomainlist.com/hostslist/hosts.txt</a></li>
+  <li class="tick"><a href="https://bitbucket.org/ethanr/dns-blacklists">Mandiant APT1 Report: </a><a href="https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt">https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt</a></li>
+  <li class="tick"><a href="https://openphish.com/">Openphish: </a><a href="https://openphish.com/feed.txt">https://openphish.com/feed.txt</a></li>
+  <li class="tick"><a href="https://github.com/quidsup/notrack">Quidsup Malicious: </a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt">https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt</a></li>
+  <li class="tick"><a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker: </a><a href="https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt">https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</a></li>
+  <li class="tick"><a href="http://www.shallalist.de">Shalla Malicious: </a><a href="http://v.firebog.net/hosts/Shalla-mal.txt">http://v.firebog.net/hosts/Shalla-mal.txt</a></li>
+  <li class="tick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Risky Hosts: </a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</a></li>
+  <li class="tick"><a href="https://zeustracker.abuse.ch">Zeus Tracker: </a><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist">https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</a></li>
 </ul>
 
 <h2>Whitelisting Suggestions:</h2>
