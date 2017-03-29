@@ -167,7 +167,7 @@ li:before { content: "\0203A"; position: absolute; background-color: rgba(255,25
   border-spacing: 4px 0;
 }
 
-.buttons *:not(input[type=password]) {
+.buttons *:not([type=password]) {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
