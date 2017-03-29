@@ -134,8 +134,9 @@ footer {
   text-align: center;
 }
 
-main *:first-child { margin-top: 0; }
-main *:last-child { margin-bottom: 0; }
+main > *:last-child,
+main > *:last-child > *:last-child { margin-bottom: 0; }
+main > *:first-child { margin-top: 0; }
 
 h2 {
   margin: 12px 0 4px 0;
