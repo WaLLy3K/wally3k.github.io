@@ -190,10 +190,10 @@ label, .buttons * {
 }
 
 /* Blacklist Domains */
-.tick:before {
-  content: "\2713";
+.tick:before { content: "\2713"; margin-top: 1px; }
+.cross:before { content: "\2717"; }
+.tick:before, .cross:before {
   font-size: 1rem;
-  margin-top: 1px;
   margin-left: -14px;
   opacity: 1;
 }
