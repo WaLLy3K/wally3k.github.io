@@ -1,0 +1,228 @@
+/* Stornur: The primary style for wally3k.github.io */
+/* by WaLLy3K 01FEB15 */
+/* Developed on: Chrome v55 Win & macOS, Firefox v51 Win, IE11 Win, Safari 10 macOS, Safari iOS 9.3.3 */
+
+/* http://necolas.github.io/normalize.css */
+html { font-family: sans-serif; line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+article, aside, footer, header, nav, section { display: block; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+figcaption, figure, main { display: block; }
+figure { margin: 1em 40px; }
+hr { box-sizing: content-box; height: 0; overflow: visible; }
+pre { font-family: monospace, monospace; font-size: 1em; }
+a { background-color: transparent; -webkit-text-decoration-skip: objects; }
+a:active, a:hover { outline-width: 0; }
+abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; }
+b, strong { font-weight: inherit; }
+b, strong { font-weight: bolder; }
+code, kbd, samp { font-family: monospace, monospace; font-size: 1em; }
+dfn { font-style: italic; }
+mark { background-color: #ff0; color: #000; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+audio, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+img { border-style: none; }
+svg:not(:root) { overflow: hidden; }
+button, input, optgroup, select, textarea { font-family: sans-serif; font-size: 100%; line-height: 1.15; margin: 0; }
+button, input { overflow: visible; }
+button, select { text-transform: none; }
+button, html [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { border-style: none; padding: 0; }
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend { box-sizing: border-box; color: inherit; display: table; max-width: 100%; padding: 0; white-space: normal; }
+progress { display: inline-block; vertical-align: baseline; }
+textarea { overflow: auto; }
+[type="checkbox"], [type="radio"] { box-sizing: border-box; padding: 0; }
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button { height: auto; }
+[type="search"] { -webkit-appearance: textfield; outline-offset: -2px; }
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
+details, menu { display: block; }
+summary { display: list-item; }
+canvas { display: inline-block; }
+template { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 62.5%; }
+a { color: rgba(45,90,140,0.95); text-decoration: none; }
+a:hover { color: rgba(255,128,0,0.95); transition-duration: .2s; }
+b { font-weight: bold; }
+i { font-style: italic; }
+:-ms-input-placeholder { color: rgba(68,68,68,0.43) !important; }
+
+body {
+  -webkit-text-size-adjust: 100%;
+  background: rgb(230,230,230) repeat fixed;
+  background-image: url("bg.svg"), -webkit-linear-gradient(bottom, transparent, rgba(0,0,0,0.05));
+  background-image: url("bg.svg"), linear-gradient(to top, transparent, rgba(0,0,0,0.05));
+  font: 1.4rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.8rem !important;
+  color: rgb(68,68,68);
+}
+
+header, main {
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.04);
+}
+
+header {
+  display: table;
+  width: 100%;
+  border-width: 1px 0;
+  border-top-color: rgba(255,255,255,0.8);
+  background: rgb(240,240,240);
+  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.05), transparent);
+  background-image: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+  font: bold 1rem 'Trebuchet MS', sans-serif;
+  text-shadow: 0 1px rgba(255,255,255,0.8);
+}
+
+header h1, header div {
+  display: table-cell;
+  width: 100%;
+}
+
+header h1 {
+  background: url("fire.svg") 2px no-repeat;
+  padding: 8px 4px;
+  font-size: 2.2rem;
+  text-indent: 32px;
+}
+
+header h1 a, h1 a:hover { color: inherit; }
+
+header div {
+  box-sizing: border-box;
+  min-width: 150px;
+  vertical-align: middle;
+  padding-right: 4px;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+main {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 4px auto;
+  padding: 4px;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 8px; 
+  overflow: hidden;
+}
+
+main h2:first-child { margin-top: 0; }
+main *:last-child { margin-bottom: 0; }
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin: 12px 0 4px 0;
+  padding-bottom: 3px;
+  background: rgba(0,0,0,0.2);
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.2), transparent 80%) no-repeat;
+  background: linear-gradient(to right, rgba(0,0,0,0.2), transparent 80%) no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+}
+
+main p, main div { 
+  margin: 4px 8px 12px 4px;
+}
+
+main > div > p,
+main > div > ul,
+main > h2 + ul {
+  margin-left: 8px;
+}
+
+ul { margin: 4px 0 8px 0; padding-left: 12px; overflow: auto; -webkit-overflow-scrolling: touch; }
+li { list-style-type: none; }
+li:before { content: "\0203A"; color: rgba(68,68,68,0.7); font-weight: bold; position: absolute; margin-left: -12px; margin-top: -1px; position: absolute; z-index: 1; }
+.tick:before { content: "\2713"; color: inherit; font-size: 0.9rem; margin-top: 0; margin-left: -13px; }
+
+/* Toggle Box */
+#tg { display: none; }
+.url-list li > a:first-child { display: none; }
+#tg:checked ~ .url-list li > a:first-child { display: inline-block !important; }
+
+.bdToggle label { background-color: rgba(60,140,220,0.4); }
+.bdWhitelist a:after { content: ":"; color: rgb(68,68,68); }
+.bdWhitelist a:hover:after { color: rgb(68,68,68); }
+
+/* Style HTTP and HTTPS links */
+.url-list a[href^="http:"]:not(:first-child) { color: inherit; }
+.url-list a[href^="https:"]:not(:first-child) { color: rgb(20,120,60); }
+
+.url-list a[href^="https:"]:not(:first-child):before {
+  content: ""; 
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc5JyBoZWlnaHQ9JzEyJyB2aWV3Qm94PScwIDAgOSAxMic+PHBhdGggZmlsbD0nIzUwYTAyOCcgZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNOCwzLjVhMy41LDMuNSwwLDAsMC03LDBWNUg4VjMuNVptLTIsMGExLjUsMS41LDAsMCwwLTMsMFY1SDZWMy41Wk0xLjUsNWg2QTEuNSwxLjUsMCwwLDEsOSw2LjV2NEExLjUsMS41LDAsMCwxLDcuNSwxMmgtNkExLjUsMS41LDAsMCwxLDAsMTAuNXYtNEExLjUsMS41LDAsMCwxLDEuNSw1WicvPjwvc3ZnPg==");
+  width: 9px;
+  height: 12px;
+  display: inline-block;
+  margin-bottom: -1px;
+  margin-right: 2px;
+}
+
+code {
+  font: 1.2rem Consolas, monospace;
+  padding: 0 2px;
+  white-space: nowrap;
+  background-color:rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 2px;
+}
+
+footer {
+  margin: 4px auto;
+  width: 86%;
+  font: 1.1rem Consolas, monospace;
+  text-align: center;
+}
+
+.buttons {
+  display: table;
+  width: 100%;
+  margin: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  border-spacing: 4px 0;
+}
+
+.buttons *:not(#pw) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label, .buttons * {
+  display: table-cell;
+  padding: 3px 8px;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 1px rgba(255,255,255,0.22);
+  background: #F8F8F8;
+  background: -webkit-linear-gradient(top, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  background: linear-gradient(to bottom, rgba(245,245,245,0.25), rgba(225,225,225,0.25));
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  margin-right: 4px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* iPhone: Portrait */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+  header:not(#block) div span:before { content: "Mobile"; }
+  main { width: 100%; border-radius: 0; margin: 0 0 4px 0; border-width: 0 0 1px 0; }
+  ul { overflow-y: hidden; overflow-x: scroll; white-space: nowrap; }
+  li:before { margin-top: -1px; }
+  .tick:before  { margin-top: 1px; }
+}
