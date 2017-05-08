@@ -19,20 +19,11 @@
     <li>The changelog for this page is found <a href="https://github.com/WaLLy3K/wally3k.github.io/commits/master/index.html">at Github</a></li>
     <li>My other project is <b><a href="https://github.com/WaLLy3K/Pi-hole-Block-Page">Pi-hole Block Page</a></b></li>
     <li class="bdTick">Lists bulleted with a tick have <i>no notable</i> false positives</li>
-    <li class="bdCross">Lists bulleted with a cross block multiple useful sites (e.g: Amazon AWS, Google, Netflix)</li>
+    <li class="bdCross">Lists bulleted with a cross block multiple useful sites (e.g: <b>Pi-hole updates</b>, Amazon AWS, Google, Netflix)</li>
     <li>Lists are installed to <code>/etc/pihole/adlists.list</code>, which must be created first</li>
     <li>In order to easily write to <code>adlists.list</code>, run <code>sudo chown pi /etc/pihole/adlists.list</code></li>
     <li>Formatting <code>adlists.list</code> is the same as <code>adlists.default</code>: <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists">Customising Sources for Ad Lists</a></li>
     <li>I mirror some of these lists. If this (or the lack of <span id="bdTls">TLS</span>) concerns you, then <a href="https://github.com/pi-hole/pi-hole/wiki/Customising-Sources-for-Ad-Lists#how-to-parse-a-list-to-get-just-the-domain">consider parsing them yourself</a></li>
-  </ul>
-</div>
-
-<div>
-  Blocking over one million domains can result in Pi-hole's <a href="http://pi.hole/admin/queries.php">Query Log tool</a> <span class="bdWarning">failing to work</span>. There are a few ways you can work around this:
-  <ul>
-    <li>Checkout the development branch to obtain <a href="https://pi-hole.net/2017/01/10/coming-soon-to-a-pi-hole-near-you-ftl/">FTL</a>: <code>pihole checkout dev</code></li>
-    <li>Avoid lists known for being <i>extremely overzealous</i>, such as the one maintained by Elad Karako</li>
-    <li>Increase PHP's memory by changing <code>memory_limit</code> to read <code>180M</code> within <code>/etc/php5/cgi/php.ini</code></li>
   </ul>
 </div>
 
