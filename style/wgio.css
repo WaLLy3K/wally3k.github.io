@@ -53,23 +53,12 @@ html {
 
 body {
   background: rgb(220,220,220) repeat fixed;
-  background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.05));
+  background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.05)), url("bg.svg");
+  background-attachment: fixed;
   color: rgb(32,32,32);
   font: 1.6rem "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5rem;
   height: 100%;
-}
-
-body:after {
-  content: "";
-  background: url("bg.svg");
-  bottom: 0;
-  left: 0;
-  opacity: 0.7;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;   
 }
 
 a {
