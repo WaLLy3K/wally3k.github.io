@@ -12,25 +12,23 @@
   <meta property="og:description" content="Pi-hole compatible blocklists for you to have a more enjoyable online presence">
 </head><body id="blacklist">
 <header>
-  <div class="title"><a href="/about.html">The Firebog</a></div>
-  <div class="alt">Updated: 08JUL18<br/><span/></div>
+  <div class="title"><a href="/">The Firebog</a></div>
+  <div class="alt">Changelog: <a href="https://github.com/WaLLy3K/wally3k.github.io/commits/master/index.html">GitHub</a><br/>Contact: <a href="/about">WaLLy3K</a></div>
 </header>
 <main>
 <h1>The Big Blocklist Collection</h1>
-<p>The Internet is full of unsavoury content: advertisers wanting to sell you stuff you don't need, trackers extracting and selling your data as if it were oil, and malicious content vying to hijack your favourite device. This collection hopes to help you minimise these issues and maintain a more enjoyable online presence, using the wonderful, free and open source utility known as <a href="https://pi-hole.net/">Pi-hole</a>.</p>
+<p>The Internet is full of unsavoury content: advertisers wanting to sell you stuff you don't need, trackers extracting and selling your data as if it were oil, and malicious content vying to hijack your favourite device. This collection hopes to help you minimise these issues, and to maintain a more enjoyable online presence, using the wonderful, free and open source utility known as <a href="https://pi-hole.net/">Pi-hole</a>.</p>
 
 <blockquote>On arrival, like a growing number of websites, Forbes asked readers to turn off ad blockers in order to view the article. After doing so, visitors were immediately served with pop-under malware, primed to infect their computers, and likely silently steal passwords, personal data and banking information. Or, as is popular worldwide with these malware "exploit kits," lock up their hard drives in exchange for Bitcoin ransom.
 <cite>'<a href="https://www.techdirt.com/articles/20160111/05574633295/forbes-site-after-begging-you-turn-off-adblocker-serves-up-steaming-pile-malware-ads.shtml">Forbes Site, After Begging You To Turn Off Adblocker, Serves Up A Steaming Pile Of Malware 'Ads'</a>' - <i>Techdirt</i>, 2016</cite></blockquote>
 
 <h4>Before starting, here are some reading points:</h4>
 <ul>
-  <li>The changelog for this page is found <a href="https://github.com/WaLLy3K/wally3k.github.io/commits/master/index.html">on GitHub</a></li>
-  <li class="bdTick">Lists bulleted with a tick have no notable false positives</li>
+  <li class="bdTick">Lists bulleted with a tick are least likely to interfere with browsing</li>
   <li class="bdCross">Lists bulleted with a cross block multiple useful sites (e.g: Pi-hole updates, Amazon, Netflix)</li>
   <li>A guide on how to add these lists <a href="https://discourse.pi-hole.net/t/how-do-i-add-additional-block-lists-to-pi-hole/259">is found here</a></li>
   <li>If you wish to automate the update of your <code>adlists.list</code>, a text-only version is <a href="https://v.firebog.net/hosts/lists.php">found here</a></li>
-  <li>Using lists hosted at <code>v.firebog.net</code> allows me to view very basic <a href="https://blog.cloudflare.com/dns-analytics/">aggregated statistics</a> via CloudFlare</li>
-  <li>The maintainers who provide their lists without <span class="tls">TLS</span> have all been contacted regarding this issue</li>
+  <li>Using lists hosted at <code>v.firebog.net</code> allows <a href="/about">me</a> to view very basic ongoing <a href="https://blog.cloudflare.com/dns-analytics/">aggregated statistics</a> via CloudFlare</li>
   <li>These lists are painstakingly curated by their respective maintainers. Please contact them <i>first</i> if you find false positives</li>
 </ul>
 
@@ -43,8 +41,8 @@
 <ul class="bdUrlList suspicious">
   <li class="bdTick"><a href="https://hosts-file.net">hpHosts Spam:</a><a href="https://hosts-file.net/grm.txt">https://hosts-file.net/grm.txt</a></li>
   <li class="bdTick"><a href="https://github.com/ReddestDream/reddestdream.github.io">ReddestDream:</a><a href="https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts">https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts</a></li>
-  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks KAD:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts</a></li>
-  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Spammers:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts</a></li>
+  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Black's KAD:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts</a></li>
+  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Black's Spammers:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts</a></li>
   <li class="bdTick"><a href="https://v.firebog.net/hosts/static/w3kbl.txt">WaLLy3K's Blacklist:</a><a href="https://v.firebog.net/hosts/static/w3kbl.txt">https://v.firebog.net/hosts/static/w3kbl.txt</a></li>
   <li><a href="http://www.sa-blacklist.stearns.org/sa-blacklist">Bill Stearn:</a><a href="https://v.firebog.net/hosts/BillStearns.txt">https://v.firebog.net/hosts/BillStearns.txt</a>
   <li><a href="http://sysctl.org/cameleon">CAMELEON:</a><a href="http://sysctl.org/cameleon/hosts">http://sysctl.org/cameleon/hosts</a></li>
@@ -70,7 +68,7 @@
   <li class="bdTick"><a href="https://hosts-file.net">hpHosts Ads/Trackers:</a><a href="https://hosts-file.net/ad_servers.txt">https://hosts-file.net/ad_servers.txt</a></li>
   <li class="bdTick"><a href="https://github.com/easylist/easylist/">Easylist:</a><a href="https://v.firebog.net/hosts/Easylist.txt">https://v.firebog.net/hosts/Easylist.txt</a></li>
   <li class="bdTick"><a href="https://pgl.yoyo.org/adservers/">Peter Lowe's Adservers</a><a href="https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts;showintro=0">https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts;showintro=0</a></li>
-  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Unchecky Ads:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts</a></li>
+  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Black's Unchecky Ads:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts</a></li>
   <li><a href="https://github.com/CHEF-KOCH/CKs-FilterList">CHEF-KOCH Spotify Ads:</a><a href="https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Spotify-HOSTS-FilterList.txt">https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Spotify-HOSTS-FilterList.txt</a></li>
 </ul>
 
@@ -79,7 +77,7 @@
   <li class="bdTick"><a href="https://github.com/easylist/easylist/">Easyprivacy:</a><a href="https://v.firebog.net/hosts/Easyprivacy.txt">https://v.firebog.net/hosts/Easyprivacy.txt</a></li>
   <li class="bdTick"><a href="https://dsi.ut-capitole.fr/blacklists/index_en.php">Fabrice Prigent's Ads:</a><a href="https://v.firebog.net/hosts/Prigent-Ads.txt">https://v.firebog.net/hosts/Prigent-Ads.txt</a></li>
   <li class="bdTick"><a href="https://github.com/quidsup/notrack">Quidsup Trackers:</a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt">https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt</a></li>
-  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Trackers:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts</a></li>
+  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Black's Trackers:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts</a></li>
   <li class="bdTick"><a href="https://github.com/crazy-max/WindowsSpyBlocker"Crazy Max's Microsoft Telemetry:</a><a href="https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt">https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt</a></li>
   <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle Trackers:</a><a href="https://v.firebog.net/hosts/Airelle-trc.txt">https://v.firebog.net/hosts/Airelle-trc.txt</a></li>
   <li><a href="https://github.com/CHEF-KOCH/Canvas-Font-Fingerprinting-pages/">CHEF-KOCH Anti Canvas Font Fingerprinting:</a><a href="https://raw.githubusercontent.com/CHEF-KOCH/Canvas-Font-Fingerprinting-pages/master/Canvas.txt">https://raw.githubusercontent.com/CHEF-KOCH/Canvas-Font-Fingerprinting-pages/master/Canvas.txt</a></li>		
@@ -105,7 +103,7 @@
   <li class="bdTick"><a href="https://github.com/quidsup/notrack">Quidsup Malicious:</a><a href="https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt">https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt</a></li>
   <li class="bdTick"><a href="https://ransomwaretracker.abuse.ch">Ransomware Tracker:</a><a href="https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt">https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt</a></li>
   <li class="bdTick"><a href="http://www.shallalist.de">Shalla Malicious:</a><a href="https://v.firebog.net/hosts/Shalla-mal.txt">https://v.firebog.net/hosts/Shalla-mal.txt</a></li>
-  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Blacks Risky Hosts:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</a></li>
+  <li class="bdTick"><a href="https://github.com/StevenBlack/hosts">Steven Black's Risky Hosts:</a><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts</a></li>
   <li class="bdTick"><a href="https://zeustracker.abuse.ch">Zeus Tracker:</a><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist">https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</a></li>
   <li><a href="http://rlwpx.free.fr/WPFF/hosts.htm">Airelle High Risk:</a><a href="https://v.firebog.net/hosts/Airelle-hrsk.txt">https://v.firebog.net/hosts/Airelle-hrsk.txt</a></li>
 </ul>
@@ -118,7 +116,8 @@
 </ul>
 
 <h2>Whitelisting Suggestions</h2>
-<p>The more blocklists you add, the more likely you'll come across a false positive. First, you'll want to check out <a href="https://discourse.pi-hole.net/t/commonly-whitelisted-domains/212">Commonly Whitelisted Domains</a> over at the <a href="https://discourse.pi-hole.net/">Pi-hole forum</a>, <a href="https://github.com/anudeepND/whitelist">anudeepND's whitelist suggestions (and scripts)</a>, then you can see if anything below is relevant to your interests. (<b>Tip:</b> Whitelisting and Blacklisting can be performed on multiple sites seperated by a space; e.g: <code>pihole -w foo.bar.com foo.com</code>)</p>
+<p>The more blocklists you add, the more likely you'll come across a false positive. First, you'll want to check out <a href="https://discourse.pi-hole.net/t/commonly-whitelisted-domains/212">Commonly Whitelisted Domains</a> over at the <a href="https://discourse.pi-hole.net/">Pi-hole forum</a>, followed up by <a href="https://github.com/anudeepND/whitelist">anudeepND's curated whitelist</a>, and then you can see if anything below is relevant to your interests.</p>
+<blockquote><b>Tip:</b> Whitelisting and Blacklisting can be performed on multiple sites seperated by a space; e.g: <code>pihole -w foo.bar.com baz.com</code></blockquote>
 
 <h4>Amazon Web Services (Kowabit)</h4>
 <ul>
@@ -174,5 +173,5 @@
   <li>api.ipify.org</li>
 </ul>
 </main>
-<footer>This site and content &copy; <a href="/about.html">WaLLy3K</a> 2017</footer>
+<footer>This site's content created &amp; maintained by <a href="/about">WaLLy3K</a></footer>
 </body></html>
