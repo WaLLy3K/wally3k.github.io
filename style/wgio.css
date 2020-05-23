@@ -503,6 +503,10 @@ button:hover, select, label:hover { cursor: pointer; }
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath fill='%23444' d='M2.355,7.546A21.9,21.9,0,0,1,6.546.965C7.033,0.5,6.365-.244,5.7.347A27.831,27.831,0,0,0,1.409,7.038,0.538,0.538,0,1,0,2.355,7.546ZM2.4,0.959C2.615,1.6,4.038,5.586,4.916,6.689c0.326,0.444,1.19.323,0.58-.63A47.466,47.466,0,0,1,3.213.677C2.886-.225,2.184.314,2.4,0.959Z'/%3E%3C/svg%3E");
 }
 
+.bdCross a {
+  text-decoration: line-through;
+}
+
 #bdToggle:checked ~ .bdUrlList li > a:first-child { display: inline; }
 
 .bdUrlList { white-space: nowrap; -webkit-overflow-scrolling: touch; }
