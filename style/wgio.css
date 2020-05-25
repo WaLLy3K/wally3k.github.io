@@ -511,11 +511,18 @@ button:hover, select, label:hover { cursor: pointer; }
 
 .bdUrlList { white-space: nowrap; -webkit-overflow-scrolling: touch; }
 .bdUrlList li > a:first-child { display: none; margin-right: 4px; }
-.bdUrlList a[href^="http:"]:not(:first-child) { color: inherit; }
-.bdUrlList a[href^="https:"]:not(:first-child), .tls { color: rgb(20,120,60); }
+.bdUrlList a[href^="http:"]:not(:first-child) { color: rgb(220,20,60); }
 
-.bdUrlList a[href^="https:"]:not(:first-child):before, .tls:before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='12'%3E%3Cg fill='%2350a028'%3E%3Cpath fill-rule='evenodd' d='M8,3.5a3.5,3.5,0,0,0-7,0V5H8V3.5Zm-2,0a1.5,1.5,0,0,0-3,0V5H6V3.5Z'/%3E%3Crect y='5' width='9' height='7' rx='1' ry='1'/%3E%3C/g%3E%3C/svg%3E");
+.bdUrlList .bdTick a {
+  color: #008000;
+}
+
+.bdUrlList .bdTick a:hover {
+  background-image: linear-gradient(to right, rgba(0,128,0,0.9) 100%, transparent);
+}
+
+.bdUrlList a[href^="http:"]:not(:first-child):before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='12'%3E%3Cg fill='%23a02828'%3E%3Cpath fill-rule='evenodd' d='M8,3.5a3.5,3.5,0,0,0-7,0V5H8V3.5Zm-2,0a1.5,1.5,0,0,0-3,0V5H6V3.5Z'/%3E%3Crect y='5' width='9' height='7' rx='1' ry='1'/%3E%3C/g%3E%3C/svg%3E");
   content: ""; 
   display: inline-block;
   height: 12px;
@@ -529,11 +536,7 @@ button:hover, select, label:hover { cursor: pointer; }
 }
 
 .bdUrlList a[href^="http:"]:not(:first-child):hover {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.9) 100%, transparent);
-}
-
-.bdUrlList a[href^="https:"]:not(:first-child):hover {
-  background-image: linear-gradient(to right, rgba(20,120,60,0.9) 100%, transparent);
+  background-image: linear-gradient(to right, rgba(160,40,40,0.9) 100%, transparent);
 }
 
 .bdDesc {
