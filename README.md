@@ -29,6 +29,19 @@ Run `pihole -q blockeddomain.com`, and it will return the URL of the block list.
 ## Know which list contains the false positive?
 Click on the big blue "Toggle List Maintainer Sources" button to show the source of a particular blocklist. Via the source page, you should be able to find the contact details for the list maintainer. Get in touch with them to remove the false positive - if you're not able to find the maintainer's contact details, please feel free to reach out to me.
 
+## Lists which I host at `v.firebog.net`:
+These lists are automatically updated, and are a domains-only (Pi-hole friendly) format of what the original list maintainer provides. I **do not** make any additions or subtractions to these lists (except for my personal blocklist).
+
+My automated parser/mirror has the following methods in place to minimise risk of being auto IP banned:
+  * It should not retrieve a remote file if it has already done so within 24 hours
+  * It will get the HTTP status, ETag and Last-Modified headers of a remote file using cURL
+  * cURL uses a custom user-agent which specifically identifies `v.firebog.net`
+  * If the HTTP status is 403, the script should not attempt retrieval until after 5 weeks (2.964e+6 seconds)
+  * It will compare server ETag header with the previously stored ETag, and only retrieve the file contents if necessary
+  * In the event a server is not configured with the ETag header, the Last-Modified header will be used in place
+  * If the Last-Modified header does not exist, it will retrieve a new copy, make a comparison with the existing version and update if necessary
+  * A cron job will fire off my script every three days
+
 ## Unable to find the list maintainer; they're unresponsive or have another issue?
 Open a ticket here, and I'll be happy to see what I can do.
 
