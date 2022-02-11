@@ -45,4 +45,4 @@ My automated parser/mirror has the following methods in place to minimise risk o
 ## Unable to find the list maintainer; they're unresponsive or have another issue?
 Open a ticket here, and I'll be happy to see what I can do.
 
-I attempt to reply to GitHub tickets and mentions as soon <i>as soon as I notice open tickets</i>, so by all means __please__ ping me <a href="https://firebog.net/about">anywhere else that I frequent</a> that's convenient for you. Also, note that if a ticket is closed, you are welcome to comment on it still if you have any question, comment or concern. :smiley:
+I attempt to reply to GitHub tickets and mentions <i>as soon as I notice them</i>, so by all means __please__ `@` ping me <a href="https://firebog.net/about">anywhere that I frequent</a> that's convenient for you if `@`'ing on GitHub doesn't get a reply in a day or two. Also, if a ticket is closed, you are welcome to comment on it still if you have any question, comment or concern. :smiley:
