@@ -418,7 +418,7 @@ button:hover, select, label:hover { cursor: pointer; }
 /* Responsive Grid */
 .grid:before, .grid:after { content: ""; display: table; }
 .grid:after { clear: both; }
-.grid div { display: table; float: left; margin: 0; width: 16.666%; }
+.grid div { display: table; float: left; margin: 8px 0 16px 0; width: 16.666%; }
 .grid div a { background: none; display: table-cell; }
 .sites div a { color: inherit; font-size: 0.8em; text-align: center; }
 
