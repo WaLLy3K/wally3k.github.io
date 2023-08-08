@@ -14,8 +14,8 @@ There's also the fact that there are very few sources of original blocklist cont
       * Additions and removals may not be passed upstream to the maintainer of that original list, benefitting more people overall   
 
 My goals are to:
-  * Credit other maintainer's high-quality content by way of "direct hits" on their content
-  * Make that content as easy to access for others as possible
+  * Credit other maintainer's high-quality content by way of "direct hits"
+  * Make their content as easy to access for others as possible
   * Not require payment or to nag for donations
   * Have a transparent changelog thanks to GitHub's commit history
 
@@ -40,7 +40,7 @@ My automated parser/mirror has the following methods in place to minimise risk o
   * It will compare server ETag header with the previously stored ETag, and only retrieve the file contents if necessary
   * In the event a server is not configured with the ETag header, the Last-Modified header will be used in place
   * If the Last-Modified header does not exist, it will retrieve a new copy, make a comparison with the existing version and update if necessary
-  * A cron job will fire off my script every three days
+  * A cron job will fire off my script every **two** days (Sun/Tue/Thur/Sat at midnight AEST) (Or twice a week for `Prigent-Adult.txt` due to size)
 
 ## Unable to find the list maintainer; they're unresponsive or have another issue?
 Open a ticket here, and I'll be happy to see what I can do.
