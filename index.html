@@ -11,6 +11,21 @@
   <meta property="og:title" content="The Big Blocklist Collection">
   <meta property="og:image" content="/style/fire.svg">
   <meta property="og:description" content="Pi-hole compatible blocklists for you to have a more enjoyable online presence">
+  <script>
+    function myFunction(o) 
+	{
+	  p = o.previousElementSibling.textContent;
+	  l = o.nextElementSibling.getElementsByTagName("li");
+	  var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=500,height=400");
+	  for(i=0; i < l.length; i++)
+	  {
+	    if (l[i].className == "bdTick")
+		{
+          win.document.body.innerHTML += "<div>sqlite3 /etc/pihole/gravity.db &quot;INSERT INTO adlist (address, enabled, comment) VALUES ('" + l[i].childNodes[1] + "', 1, '" + p + "');&quot;</label></div>";
+		}
+	  }
+	}
+  </script>
 </head>
 <body id="blacklist">
 <header>
@@ -44,7 +59,7 @@
 </div>
 <input id="bdToggle" type="checkbox">
 
-<h2>Suspicious Lists</h2>
+<h2>Suspicious Lists</h2> <button onclick="myFunction(this)">SQL</button>
 <ul class="bdUrlList suspicious">
   <li class="bdTick"><a href="https://github.com/PolishFiltersTeam/KADhosts">PolishFiltersTeam KADhosts:</a><a href="https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt">https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt</a></li>
   <li class="bdTick"><a href="https://github.com/FadeMind/hosts.extras/">Fademind's Spammers:</a><a href="https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts">https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts</a></li>
@@ -63,7 +78,7 @@
   <li class="bdCross"><a href="https://mahakala.is/">Mahakala:</a><a href="https://adblock.mahakala.is">https://adblock.mahakala.is</a></li>
 </ul>
 
-<h2>Advertising Lists</h2>
+<h2>Advertising Lists</h2> <button onclick="myFunction(this)">SQL</button> 
 <ul class="bdUrlList advertising">
   <li class="bdTick"><a href="https://adaway.org/">AdAway:</a><a href="https://adaway.org/hosts.txt">https://adaway.org/hosts.txt</a></li>
   <li class="bdTick"><a href="https://filters.adtidy.org/extension/chromium/filters/15.txt">Adguard DNS:</a><a href="https://v.firebog.net/hosts/AdguardDNS.txt">https://v.firebog.net/hosts/AdguardDNS.txt</a></li>
@@ -77,7 +92,7 @@
   <li><a href="https://github.com/jdlingyu/ad-wars">Jdlingyu's Ad-wars:</a><a href="https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts">https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts</a></li>
 </ul>
 
-<h2>Tracking &amp; Telemetry Lists</h2>
+<h2>Tracking &amp; Telemetry Lists</h2> <button onclick="myFunction(this)">SQL</button>
 <ul class="bdUrlList tracking">
   <li class="bdTick"><a href="https://github.com/easylist/easylist">Easyprivacy:</a><a href="https://v.firebog.net/hosts/Easyprivacy.txt">https://v.firebog.net/hosts/Easyprivacy.txt</a></li>
   <li class="bdTick"><a href="https://dsi.ut-capitole.fr/blacklists/index_en.php">Fabrice Prigent's Ads:</a><a href="https://v.firebog.net/hosts/Prigent-Ads.txt">https://v.firebog.net/hosts/Prigent-Ads.txt</a></li>
@@ -93,7 +108,7 @@
   <li class="bdCross"><a href="https://github.com/Kees1958/W3C_annual_most_used_survey_blocklist/">Kees1958's Top Ads &amp; Trackers:</a><a href="https://raw.githubusercontent.com/Kees1958/W3C_annual_most_used_survey_blocklist/6b8c2411f22dda68b0b41757aeda10e50717a802/TOP_EU_US_Ads_Trackers_HOST">https://raw.githubusercontent.com/Kees1958/W3C_annual_most_used_survey_blocklist/6b8c2411f22dda68b0b41757aeda10e50717a802/TOP_EU_US_Ads_Trackers_HOST</a></li>
 </ul>
 
-<h2>Malicious Lists</h2>
+<h2>Malicious Lists</h2> <button onclick="myFunction(this)">SQL</button>
 <ul class="bdUrlList malicious">
   <li class="bdTick"><a href="https://github.com/DandelionSprout/adfilt">DandelionSprout's Anti Malware Filter:</a><a href="https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt">https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt</a></li>
   <li class="bdTick"><a href="https://osint.digitalside.it/">DigitalSide Threat-Intel:</a><a href="https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt">https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt</a></li>
